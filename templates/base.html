@@ -1,5 +1,5 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'baseStyle.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/baseStyle.css' %}">
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -22,33 +22,36 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light mb-5"
-     style="background-color: #ad1457;">
+    <nav class="navbar navbar-expand-md"
+     style="background-color:  #ff96a8;">
         <div class="container-fluid">
-            <a href="{% url 'home' %}" class="navbar-brand" style="color : #ffb6c1">뽀모도로</a>
+            <a href="{% url 'home' %}" class="navbar-brand" style="">FuruGG</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon custom-toggler"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="/#" class="nav-item nav-link" style="color : #ff80ab">여신 티어</a>
-                    <a href="/#" class="nav-item nav-link" style="color : #ff80ab">카드 티어</a>
-                    <a href="/#" class="nav-item nav-link" style="color : #ff80ab">최고의 파트너</a>
-                    <a href="/#" class="nav-item nav-link" style="color : #ff80ab">대전 기록</a>
+                    <a href="/#" class="nav-item nav-link">여신 티어</a>
+                    <a href="/#" class="nav-item nav-link">카드 티어</a>
+                    <a href="/#" class="nav-item nav-link">최고의 파트너</a>
+                    <a href="/#" class="nav-item nav-link">삼습일사</a>
+                    <a href="/#" class="nav-item nav-link">대전 기록</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link"  style="color : #ff80ab">디스코드</a>
-                    <a href="#" class="nav-item nav-link"  style="color : #ff80ab">커뮤니티</a>
-                    <a href="#" class="nav-item nav-link"  style="color : #ff80ab">문의</a>
+                    <a href="#" class="nav-item nav-link">디스코드</a>
+                    <a href="#" class="nav-item nav-link" >커뮤니티</a>
+                    <a href="#" class="nav-item nav-link">문의</a>
 
                 </div>
             </div>
         </div>
     </nav>
 
-<div class="container">
+
     {% block content %}
     {% endblock %}
-</div>
+    <footer>
+        footer
+    </footer>
 </body>
 </html>

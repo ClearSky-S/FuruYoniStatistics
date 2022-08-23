@@ -1,0 +1,45 @@
+.navbar-nav a, .navbar-brand {
+    color: white;
+}
+
+.navbar-nav a:hover, .navbar-brand:hover{
+    color: #6371ab;
+}
+
+#banner{
+    /*overflow: hidden;*/
+    /*position: absolute;*/
+    /*top: 40px;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*z-index: -1;*/
+    width: 100%;
+    padding: 0;
+}
+
+.navbar-toggler{
+        border-color: #ffd6d6 !important;
+
+}
+.custom-toggler.navbar-toggler-icon {
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.custom-toggler.navbar-toggler {
+    border-color: aqua;
+}
+#sakura-box{
+    pointer-events: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#sakura-box .sakura{
+        overflow: hidden;
+
+}
