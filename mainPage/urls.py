@@ -4,10 +4,10 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('god', views.home),
-    path('card', views.home),
-    path('partner', views.home),
-    path('trio', views.home),
-    path('dual', views.home),
+    path('god', views.god),
+    path('card', views.card),
+    path('partner', views.partner),
+    path('trio', views.trio),
+    path('dual', views.dual),
 
 ]

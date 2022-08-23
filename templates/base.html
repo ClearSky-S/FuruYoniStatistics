@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FuruGG</title>
+    <link rel="icon" href="{% static 'img/base/sakura.png' %}">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Bootstrap CSS -->
@@ -23,23 +24,25 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md"
-     style="background-color:  #ff96a8;">
+     style="background-color:  #f68699;">
         <div class="container-fluid">
-            <a href="{% url 'home' %}" class="navbar-brand" style="">FuruGG</a>
+            <a href="{% url 'home' %}" class="navbar-brand" style="">
+                <img width="30" src="{% static 'img/base/sakura.png' %}"/>
+                FuruGG
+            </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon custom-toggler"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="/#" class="nav-item nav-link">여신 티어</a>
-                    <a href="/#" class="nav-item nav-link">카드 티어</a>
-                    <a href="/#" class="nav-item nav-link">최고의 파트너</a>
-                    <a href="/#" class="nav-item nav-link">삼습일사</a>
-                    <a href="/#" class="nav-item nav-link">대전 기록</a>
+                    <a href="/god" class="nav-item nav-link">여신 티어</a>
+                    <a href="/card" class="nav-item nav-link">카드 티어</a>
+                    <a href="/partner" class="nav-item nav-link">최고의 파트너</a>
+                    <a href="/trio" class="nav-item nav-link">삼습일사</a>
+                    <a href="/dual" class="nav-item nav-link">대전 기록</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link">디스코드</a>
-                    <a href="#" class="nav-item nav-link" >커뮤니티</a>
+                    <a href="https://discord.gg/SvAzXTHgNW" class="nav-item nav-link">커뮤니티</a>
                     <a href="#" class="nav-item nav-link">문의</a>
 
                 </div>

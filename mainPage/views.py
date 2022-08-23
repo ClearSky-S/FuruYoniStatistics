@@ -11,3 +11,18 @@ def index(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def god(request):
+    return render(request, 'god.html')
+
+def card(request):
+    return render(request, 'card.html')
+
+def partner(request):
+    return render(request, 'partner.html')
+
+def trio(request):
+    return render(request, 'trio.html')
+
+def dual(request):
+    return render(request, 'dual.html')
