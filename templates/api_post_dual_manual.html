@@ -9,44 +9,15 @@
                     <div class="mb-3 d-none">
                         <label class="form-label" for="inputServer">Server IP</label>
                         <input type="text" class="form-control" id="inputServer" disabled
-                        value="/api/dual"
+                               value="/api/dual"
                         >
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="inputJSON">JSON data</label>
-                        <textarea rows="20" type="text" class="form-control" id="inputJSON" >
-{
-    time = 0,
-    isRank = true,
+                        <textarea rows="20" type="text" class="form-control" id="inputJSON">
 
-    winner_name = 0,
-    winner_god1 = 0,
-    winner_god2 = 0,
-    winner_normal_card1 = 0,
-    winner_normal_card2 = 0,
-    winner_normal_card3 = 0,
-    winner_normal_card4 = 0,
-    winner_normal_card5 = 0,
-    winner_normal_card6 = 0,
-    winner_normal_card7 = 0,
-    winner_special_card1 = 0,
-    winner_special_card2 = 0,
-    winner_special_card3 = 0,
-
-    loser_name = 0,
-    loser_god1 = 0,
-    loser_god2 = 0,
-    loser_normal_card1 = 0,
-    loser_normal_card2 = 0,
-    loser_normal_card3 = 0,
-    loser_normal_card4 = 0,
-    loser_normal_card5 = 0,
-    loser_normal_card6 = 0,
-    loser_normal_card7 = 0,
-    loser_special_card1 = 0,
-    loser_special_card2 = 0,
-    loser_special_card3 = 0
-}</textarea>
+    {"a":1}
+</textarea>
 
                     </div>
                     <button type="submit" class="btn btn-pink" id="btn-send">Send</button>
@@ -62,24 +33,26 @@
         const url = document.querySelector("#inputServer").value
         btn_send.addEventListener("click", (e) => {
             e.preventDefault();
-            btn_send.disabled= true;
-            let data = document.querySelector("#inputJSON").value
-            data = JSON.parse(data);
-            console.log(data)
+            btn_send.disabled = true;
+
+            const jsonString = document.querySelector("#inputJSON").value
+            const replaceJsonString = jsonString.replace(/\n/g, '');
+            const jsonObj = JSON.parse(replaceJsonString);
+            console.log(jsonObj)
             $.ajax({
                 type: 'POST',
                 url: url,
                 dataType: 'json',
-                data: data,
-                success: function(result){
+                data: jsonObj,
+                success: function (result) {
                     console.log(result)
                     alert('업로드 성공!')
-                    btn_send.disabled= false;
+                    btn_send.disabled = false;
                 },
                 error: function (request, status, error) {
                     console.log(error);
                     alert('업로드 실패')
-                    btn_send.disabled= false;
+                    btn_send.disabled = false;
 
                 }
 

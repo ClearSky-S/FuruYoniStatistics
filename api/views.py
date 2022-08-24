@@ -16,12 +16,13 @@ def dual_manual_post(request):
 
 @csrf_exempt
 def dual(request):
-    a = request.POST
-    print(a.get('Name'))
+    a = request
+    print(a.POST)
     print(type(a))
-
+    # print(a.get("isRank"))
     return HttpResponse(json.dumps(request.POST), content_type="application/json")
 
+@csrf_exempt
 def test(request):
     print(request.POST)
     a = {"result": "success"}

@@ -4,20 +4,20 @@ from django.db import models
 
 
 class Dual(models.Model):
-    time = 0
-    isRank = 0
+    time = models.DateTimeField()
+    isRank = models.BooleanField()
 
-    winner_name = 0
-    winner_god1 = 0
-    winner_god2 = 0
-    winner_normal_card_list = 0
-    winner_special_card_list = 0
+    winner_name = models.CharField(max_length=200)
+    winner_god1 = models.CharField(max_length=200)
+    winner_god2 = models.CharField(max_length=200)
+    winner_normal_card_list = models.JSONField(default='{}')
+    winner_special_card_list = models.JSONField(default='{}')
 
-    loser_name = 0
-    loser_god1 = 0
-    loser_god2 = 0
-    loser_normal_card_list = 0
-    loser_special_card_list = 0
+    loser_name = models.CharField(max_length=200)
+    loser_god1 = models.CharField(max_length=200)
+    loser_god2 = models.CharField(max_length=200)
+    loser_normal_card_list = models.JSONField(default='{}')
+    loser_special_card_list = models.JSONField(default='{}')
 
 
 
