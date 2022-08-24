@@ -27,8 +27,16 @@ def partner_god_select(request):
 def partner(request, god):
     return render(request, 'partner.html')
 
-def trio(request):
+def trio_god_select_1(request):
+    return render(request, 'trio_god_select_1.html')
+
+def trio_god_select_2(request, god1):
+    return render(request, 'trio_god_select_2.html')
+
+def trio(request, god1, god2):
     return render(request, 'trio.html')
 
 def dual(request):
     return render(request, 'dual.html')
+def decklist(request, number,isWinner):
+    return render(request, 'decklist.html')

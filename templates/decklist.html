@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <h2 class="display-6 border-pink pb-3 mt-5 ">덱리스트</h2>
+
+        <div class="row">
+            <div class="col-md-8 mb-4">
+                <table class="table table-striped-pink">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>카드</th>
+                        <th>여신</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>팔방 휘두르기</td>
+                        <td>사이네<img src="{% static 'img/table/table_saine.png' %}"/> </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>팔방 휘두르기</td>
+                        <td>사이네<img src="{% static 'img/table/table_saine.png' %}"/> </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>팔방 휘두르기</td>
+                        <td>사이네<img src="{% static 'img/table/table_saine.png' %}"/> </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-2 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/god/full_saine.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">사이네</h5>
+                        <p class="card-text"><b>팔상 </b>- 당신의 오라가 1 이하라면, 몇몇 카드가 강화된다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4">
+                <div class="card">
+                    <img src="{% static 'img/god/full_saine.png' %}" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">사이네</h5>
+                        <p class="card-text"><b>팔상 </b>- 당신의 오라가 1 이하라면, 몇몇 카드가 강화된다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
