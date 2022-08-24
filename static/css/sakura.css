@@ -14,7 +14,7 @@
     opacity: 0.9;
     top: 0; }
   100% {
-    opacity: 0.2;
+    opacity: 0.5;
     top: 100%; } }
 
 @keyframes fall {
@@ -22,7 +22,7 @@
     opacity: 0.9;
     top: 0; }
   100% {
-    opacity: 0.2;
+    opacity: 0.5;
     top: 100%; } }
 
 @-webkit-keyframes blow-soft-left {

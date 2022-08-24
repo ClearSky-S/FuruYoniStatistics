@@ -1,9 +1,9 @@
-.navbar-nav a, .navbar-brand {
-    color: white;
+.navbar-nav a, a.navbar-brand {
+    color: white !important;
 }
 
-.navbar-nav a:hover, .navbar-brand:hover{
-    color: #8c2c3e;
+.navbar-nav a:hover, a.navbar-brand:hover{
+    color: #8c2c3e !important;
 }
 
 #banner{
@@ -41,5 +41,57 @@ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/s
 
 #sakura-box .sakura{
         overflow: hidden;
+
+}
+
+.btn-pink {
+    color: #fff!important;
+    background-color: #f68699!important;
+    border-color: #f68699!important;
+}
+.table tbody tr{
+    position: relative;
+}
+.table tbody tr img{
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left: 30px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+
+footer{
+    height: 180px;
+    color: #fff;
+    background-color: #ffc0cd;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.table-striped-pink>tbody>tr:nth-of-type(odd) {
+    --bs-table-accent-bg: #fff4f6;
+}
+th a{
+   text-decoration: none;
+    color: black;
+}
+
+.border-pink {
+    border-bottom: 2px solid #ffc3cf;
+}
+#home-banner{
+    position: relative;
+}
+#banner-yurina{
+    display: block;
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 0px;
+    margin: 0 auto;
+    width: 63%;
+    z-index: 2;
 
 }

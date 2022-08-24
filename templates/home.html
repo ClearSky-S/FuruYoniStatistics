@@ -1,18 +1,202 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/sakura.css' %}" />
-    <script src="{% static "js/sakura.js" %}"></script>
+
     <div class="container">
         <div class="row">
-            <img id="banner" src="{% static 'img/home/top_visual.png' %}"/>
+            <div id="home-banner">
+                <img id="banner" src="{% static 'img/home/top_visual_background.png' %}"/>
+                <img id="banner-yurina" src="{% static 'img/home/top_visual3.png' %}"/>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h4 class=" border-pink pb-3 mt-4 ">여신 티어</h4>
+                <table class="table table-striped-pink">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>여신</th>
+                        <th>승률</th>
+                        <th>픽률</th>
+                        <th>밴</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table-primary">
+                        <td>1</td>
+                        <td>사이네 <img src="{% static 'img/table/table_saine.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>「대장장이」 하가네 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
+                        <td>54.3%</td>
+                        <td>18.4%</td>
+                        <td>26.3%</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="/god" type="button" class="btn btn-pink">전체 여신 티어</a>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h4 class=" border-pink pb-3 mt-4 ">카드 티어</h4>
+                <table class="table table-striped-pink">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>카드</th>
+                        <th>여신</th>
+                        <th>승률</th>
+                        <th>픽률</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>팔방 휘두르기</td>
+                        <td>사이네<img src="{% static 'img/table/table_saine.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>대연성 마테리얼</td>
+                        <td>「대장장이」 하가네<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr><tr>
+                        <td>1</td>
+                        <td>참</td>
+                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
+                        <td>54.3%</td>
+                        <td>68.4%</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a href="/card"type="button" class="btn btn-pink">여신별 카드 티어</a>
+            </div>
         </div>
     </div>
 
-    <div id="sakura-box"></div>
-
+    <div id="sakura-box">
+    <link rel="stylesheet" href="{% static 'css/sakura.css' %}"/>
+    <script src="{% static "js/sakura.js" %}"></script>
     <script>
-        const sakura = new Sakura('#sakura-box', { });
+        const sakura = new Sakura('#sakura-box', {});
     </script>
+    </div>
+
+
 
 {% endblock %}

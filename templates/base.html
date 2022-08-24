@@ -23,38 +23,43 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md"
+<nav class="navbar navbar-expand-md"
      style="background-color:  #f68699;">
-        <div class="container-fluid">
-            <a href="{% url 'home' %}" class="navbar-brand" style="">
-                <img width="30" src="{% static 'img/base/sakura.png' %}"/>
-                FuruGG
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon custom-toggler"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <a href="/god" class="nav-item nav-link">여신 티어</a>
-                    <a href="/card" class="nav-item nav-link">카드 티어</a>
-                    <a href="/partner" class="nav-item nav-link">최고의 파트너</a>
-                    <a href="/trio" class="nav-item nav-link">삼습일사</a>
-                    <a href="/dual" class="nav-item nav-link">대전 기록</a>
-                </div>
-                <div class="navbar-nav ms-auto">
-                    <a href="https://discord.gg/SvAzXTHgNW" class="nav-item nav-link">커뮤니티</a>
-                    <a href="#" class="nav-item nav-link">문의</a>
+    <div class="container-fluid">
+        <a href="{% url 'home' %}" class="navbar-brand" style="">
+            <img width="30" src="{% static 'img/base/sakura.png' %}"/>
+            FuruGG
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon custom-toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/god" class="nav-item nav-link">여신 티어</a>
+                <a href="/card" class="nav-item nav-link">카드 티어</a>
+                <a href="/partner" class="nav-item nav-link">최고의 파트너</a>
+                <a href="/trio" class="nav-item nav-link">삼습일사</a>
+                <a href="/dual" class="nav-item nav-link">대전 기록</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="https://discord.gg/SvAzXTHgNW" class="nav-item nav-link">커뮤니티</a>
+                <a href="#" class="nav-item nav-link">문의</a>
 
-                </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
 
-    {% block content %}
-    {% endblock %}
-    <footer>
-        footer
-    </footer>
+{% block content %}
+{% endblock %}
+<footer>
+    <div href="{% url 'home' %}" class="navbar-brand" style="">
+        <img width="30" src="{% static 'img/base/sakura.png' %}"/>
+        FuruGG
+    </div>
+    Not affiliated with Bakafire.<br/>
+    <b>Contact</b> junhyuckjang3@gmail.com
+</footer>
 </body>
 </html>

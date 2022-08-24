@@ -15,10 +15,16 @@ def home(request):
 def god(request):
     return render(request, 'god.html')
 
-def card(request):
+def card_god_select(request):
+    return render(request, 'card_god_select.html')
+
+def card(request, god):
     return render(request, 'card.html')
 
-def partner(request):
+def partner_god_select(request):
+    return render(request, 'partner_god_select.html')
+
+def partner(request, god):
     return render(request, 'partner.html')
 
 def trio(request):
