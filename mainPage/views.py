@@ -2,7 +2,7 @@ from itertools import repeat
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from api.models import Dual
+from api.models import Dual, God
 # Create your views here.
 
 
@@ -37,9 +37,36 @@ def trio(request, god1, god2):
     return render(request, 'trio.html')
 
 def dual(request):
-    dual_list = Dual.objects.order_by('-time')
+    dual_list = Dual.objects.order_by('-time')[:50]
+    dual_data = []
+
+    for dual_row in dual_list:
+        dual_data.append({
+            'id': dual_row.pk,
+            'time': dual_row.time,
+
+            'winner_name': dual_row.winner_name,
+            'winner_god_1': God.objects.get(god_code=dual_row.winner_god_1),
+            'winner_god_2': God.objects.get(god_code=dual_row.winner_god_2),
+            'winner_god_ban':
+                " "
+                if dual_row.winner_god_ban == "None"
+                else God.objects.get(god_code=dual_row.winner_god_ban),
+            'winner_god_1_code': dual_row.winner_god_1,
+            'winner_god_2_code': dual_row.winner_god_2,
+
+            'loser_name': dual_row.loser_name,
+            'loser_god_1': God.objects.get(god_code=dual_row.loser_god_1),
+            'loser_god_2': God.objects.get(god_code=dual_row.loser_god_2),
+            'loser_god_ban':
+                " "
+                if dual_row.loser_god_ban == "None"
+                else God.objects.get(god_code=dual_row.loser_god_ban),
+            'loser_god_1_code': dual_row.loser_god_1,
+            'loser_god_2_code': dual_row.loser_god_2,
+        })
     context = {
-        'dual_list': dual_list
+        'dual_list': dual_data
     }
     return render(request, 'dual.html', context)
 def decklist(request, dual_id, isWinner):
@@ -48,6 +75,8 @@ def decklist(request, dual_id, isWinner):
         context = {
             "god1": dual_model.winner_god_1,
             "god2": dual_model.winner_god_2,
+            "god1_code": dual_model.winner_god_1,
+            "god2_code": dual_model.winner_god_2,
             "deck_list": [
                 dual_model.winner_normal_card_1,
                 dual_model.winner_normal_card_2,

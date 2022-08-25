@@ -44,22 +44,34 @@ class Dual(models.Model):
     def __str__(self):
         return "대전기록" + str(self.time)
 
-"""
+class TotalGame(models.Model):
+    total = models.IntegerField()
 
 class God(models.Model):
-    god_code = 0
-    # saine-O
-    # saine-A1
-    god_name = 0
+    # 02-O
+    # 02-A1
+    god_code = models.CharField(max_length=20)
     # 「제 2장」 사이네
+    god_name = models.CharField(max_length=20)
+    # 팔상
+    god_keyword = models.CharField(max_length=10)
+    # 당신의 오라가 1 이하라면...
+    god_text = models.CharField(max_length=200)
 
-    pick_count = 0
-    pick_ratio = 0
-    ban_count = 0
-    ban_ratio = 0
-    win_count = 0
-    win_ratio = 0
+    pick_count = models.IntegerField()
+    # pick / total
+    pick_ratio = models.DecimalField(max_digits=3, decimal_places=1)
+
+    ban_count = models.IntegerField()
+    # ban / pick
+    ban_ratio = models.DecimalField(max_digits=3, decimal_places=1)
+
+    win_count = models.IntegerField()
     # win / (pick-ban)
+    win_ratio = models.DecimalField(max_digits=3, decimal_places=1)
+    def __str__(self):
+        return self.god_name
+"""
 
 class Partner(models.Model):
     pick_count_saine_O = 0

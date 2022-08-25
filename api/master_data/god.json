@@ -1,0 +1,670 @@
+[
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "01-O",
+      "god_name": "유리나",
+      "god_keyword": "결사",
+      "god_text": "당신의 라이프가 3 이하일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "01-A1",
+      "god_name": "유리나-제1장",
+      "god_keyword": "결사",
+      "god_text": "당신의 라이프가 3 이하일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "01-A2",
+      "god_name": "유리나-조정자",
+      "god_keyword": "결사",
+      "god_text": "당신의 라이프가 3 이하일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "02-O",
+      "god_name": "사이네",
+      "god_keyword": "팔상",
+      "god_text": "당신의 오라가 1 이하일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "02-A1",
+      "god_name": "사이네-제2장",
+      "god_keyword": "팔상",
+      "god_text": "당신의 오라가 1 이하일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "02-A2",
+      "god_name": "사이네-허무신",
+      "god_keyword": "팔상",
+      "god_text": "당신의 오라가 1 이하일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "03-O",
+      "god_name": "히미카",
+      "god_keyword": "연화",
+      "god_text": "당신이 한 턴에 3장 이상의 카드를 사용하였다면, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "03-A1",
+      "god_name": "히미카-원초",
+      "god_keyword": "연화",
+      "god_text": "당신이 한 턴에 3장 이상의 카드를 사용하였다면, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "04-O",
+      "god_name": "토코요",
+      "god_keyword": "경지",
+      "god_text": "당신의 집중력이 2일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "04-A1",
+      "god_name": "토코요-방랑예인",
+      "god_keyword": "경지",
+      "god_text": "당신의 집중력이 2일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "04-A2",
+      "god_name": "토코요-허무신",
+      "god_keyword": "경지",
+      "god_text": "당신의 집중력이 2일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "05-O",
+      "god_name": "오보로",
+      "god_keyword": "설치",
+      "god_text": "덱 재구성 시 덮임패 중 설치 카드 1장을 사용 가능.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "05-A1",
+      "god_name": "오보로-제3장",
+      "god_keyword": "설치",
+      "god_text": "설치 능력이 있는 카드를 덮임패로 둔 상태에서 덱의 재구성을 실행할 경우, 재구성 직전에 그 중 한 장을 덮임패에서 사용 가능.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "06-O",
+      "god_name": "유키히",
+      "god_keyword": "변모",
+      "god_text": "우산을 접고 편 상태가 있어서, 일부 카드가 그 상태에 따라 효과가 변한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "06-A1",
+      "god_name": "유키히-사교계",
+      "god_keyword": "변모",
+      "god_text": "우산을 접고 편 상태가 있어서, 일부 카드가 그 상태에 따라 효과가 변한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "07-O",
+      "god_name": "신라",
+      "god_keyword": "계략",
+      "god_text": "두 종류의 책략을 하나 선택하여 비밀리에 준비해둔다. 계략을 실행할 때 준비해둔 효과를 해결한 뒤, 다음 계략을 다시 비밀 상태로 준비한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "07-A1",
+      "god_name": "신라-교주",
+      "god_keyword": "계략",
+      "god_text": "두 종류의 책략을 하나 선택하여 비밀리에 준비해둔다. 계략을 실행할 때 준비해둔 효과를 해결한 뒤, 다음 계략을 다시 비밀 상태로 준비한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "08-O",
+      "god_name": "하가네",
+      "god_keyword": "원심",
+      "god_text": "원심을 가지는 카드는 이하의 조건을 모두 만족해야 발동할 수 있다. 1) 현재의 간격이 턴 개시 시의 간격으로부터 2 이상 뒤로 떨어져있다. 2) 이 턴 중에 당신이 공격을 하지 않았다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "08-A1",
+      "god_name": "하가네-대장장이",
+      "god_keyword": "원심",
+      "god_text": "원심을 가지는 카드는 이하의 조건을 모두 만족해야 발동할 수 있다. 1) 현재의 간격이 턴 개시 시의 간격으로부터 2 이상 뒤로 떨어져있다. 2) 이 턴 중에 당신이 공격을 하지 않았다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "09-O",
+      "god_name": "치카게",
+      "god_keyword": "독주머니",
+      "god_text": "독주머니에 다음 5장의 카드를 준비한 상태로 게임을 시작한다: [마비독] [환각독] [이완독] [호로비독(x2)]",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "09-A1",
+      "god_name": "치카게-제4장",
+      "god_keyword": "독주머니",
+      "god_text": "독주머니에 다음 5장의 카드를 준비한 상태로 게임을 시작한다: [마비독] [환각독] [이완독] [호로비독(x2)]",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "10-O",
+      "god_name": "쿠루루",
+      "god_keyword": "기교",
+      "god_text": "기교가 완성되지 않았다면 톱니바퀴화 효과는 해결되지 않는다. 기교를 완성시키기 위해서는 당신의 버림 패에 톱니칸에 표시되어있는 종류의 카드가 보여져 있어야 한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "10-A1",
+      "god_name": "쿠루루-탐색자",
+      "god_keyword": "세기의 대발견",
+      "god_text": "세기의 대발견을 달성하면 상대의 비장패를 모두 본다. 상대가 안전구축에서 사용하지 않은 비장패 5장을 얻는다. 그 후 [라스트 리서치] 카드를 제거 후, [그랑갈리버] 카드를 추가패에서 얻는다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "10-A2",
+      "god_name": "쿠루루-허무신",
+      "god_keyword": "기교",
+      "god_text": "기교가 완성되지 않았다면 톱니바퀴화 효과는 해결되지 않는다. 기교를 완성시키기 위해서는 당신의 버림 패에 톱니칸에 표시되어있는 종류의 카드가 보여져 있어야 한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "11-O",
+      "god_name": "탈리야",
+      "god_keyword": "조화",
+      "god_text": "머신과 조화결정 5개를 가지고 게임을 시작. 연소, 기동, Transform",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "11-A1",
+      "god_name": "탈리야-귀환",
+      "god_keyword": "조화",
+      "god_text": "머신과 조화결정 5개를 가지고 게임을 시작. 연소, 기동, Transform",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "12-O",
+      "god_name": "라이라",
+      "god_keyword": "풍뢰",
+      "god_text": "풍신 게이지와 뇌신 게이지를 가지며, 초기치는 0, 최대 20까지 올릴 수 있다. 다른 여신의 카드를 사용하여 게이지를 올릴 수 있다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "12-A1",
+      "god_name": "라이라-기도사",
+      "god_keyword": "폭풍의 힘",
+      "god_text": "폭풍의 힘을 발동할 때, 아래 6개의 선택지 중 하나를 선택한다. 그 후 표시된 숫자만큼의 풍신or뇌신 게이지를 줄인 다음 해당 효과를 해결한다. : 풍신1,2,3 / 뇌신 1,2,3",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "13-O",
+      "god_name": "우츠로",
+      "god_keyword": "회진",
+      "god_text": "더스트가 12 이상일 경우, 몇몇 카드가 강화된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "13-A1",
+      "god_name": "우츠로-종장",
+      "god_keyword": "종언의 그림자",
+      "god_text": "종언의 그림자가 내리면, 당신의 비장패가 아닌 모든 카드를 게임에서 제외하고, '잔향장치:쿠루루식'을 게임에서 제외한 뒤 추가패 '망아'를 사용완료 상태로 획득",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "14-O",
+      "god_name": "호노카",
+      "god_keyword": "개화",
+      "god_text": "일부 카드가 사용될 경우 다른 카드로 변모한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "14-A1",
+      "god_name": "호노카-오우카",
+      "god_keyword": "개화",
+      "god_text": "일부 카드가 사용될 경우 다른 카드로 변모한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "15-O",
+      "god_name": "코루누",
+      "god_keyword": "동결",
+      "god_text": "상대를 동결시켜, 동결 토큰을 오라에 놓아서 오라의 빈 곳을 채운다. 동결되어 있는 한, 기본동작 [품기]는 [동결 토큰을 하나 제거한다]로 변경된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "16-O",
+      "god_name": "야츠하",
+      "god_keyword": "거울상",
+      "god_text": "당신과 상대의 라이프/오라/플레어 중 서로 수치가 같은 짝의 개수를 거울 수로 정한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "16-A1",
+      "god_name": "야츠하-완전태",
+      "god_keyword": "거울상",
+      "god_text": "당신과 상대의 라이프/오라/플레어 중 서로 수치가 같은 짝의 개수를 거울 수로 정한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "16-AA1",
+      "god_name": "야츠하-자아",
+      "god_keyword": "거울상",
+      "god_text": "당신과 상대의 라이프/오라/플레어 중 서로 수치가 같은 짝의 개수를 거울 수로 정한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "17-O",
+      "god_name": "하츠미",
+      "god_keyword": "항해",
+      "god_text": "순풍 - 직전 턴에 당신이 공격당하지 않았다면, 순풍이 된다. 역풍 - 직전 턴에 당신이 공격당했다면, 역풍이 된다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "17-A1",
+      "god_name": "허무신",
+      "god_keyword": "잠수",
+      "god_text": "잠수를 수행한다는 효과를 발동할 때, 잠수전진 또는 잠수후퇴를 비밀리에 덮어둔다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "18-O",
+      "god_name": "미즈키",
+      "god_keyword": "통솔",
+      "god_text": "병영에 4장의 카드 ([창병]2장, [방패병], [기병])를 준비한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "19-O",
+      "god_name": "메구미",
+      "god_keyword": "다른 벚나무",
+      "god_text": "토양과 씨앗결정 5개를 가지고 게임 시작",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "20-O",
+      "god_name": "카나에",
+      "god_keyword": "신어",
+      "god_text": "이야기보드의 백의 막에서부터 영웅담이 시작된다. 구상을 달성할 때마다 말을 다음 막으로 이동시키고, 종막에 도달하게 되면 당신이 승리한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "21-O",
+      "god_name": "카무이",
+      "god_keyword": "금기",
+      "god_text": "당신의 금기 게이지가 16 이상이면 당신은 패배한다",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "22-O",
+      "god_name": "렌리",
+      "god_keyword": "위증",
+      "god_text": "통상패를 기본적인 방법으로 사용할 때, 위증을 가진 각 카드로 한 번씩 위증할 수 있다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  }
+]
