@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Dual
+from .models import Dual, TotalGame, God
 import json
 
 from django.utils import timezone
@@ -65,6 +65,52 @@ def dual(request):
 
         dual_model.save()
 
+
+        total_game = TotalGame.objects.all()
+        if len(total_game)==0:
+            total_game = TotalGame()
+            total_game.total = 1
+            total_game.save()
+        else:
+            total_game = total_game[0]
+            total_game.total += 1
+            total_game.save()
+        total_game = total_game.total
+
+
+        for winner_god in [dual_model.winner_god_1, dual_model.winner_god_2]:
+            winner_god = God.objects.get(god_code=winner_god)
+            print(winner_god)
+            print(winner_god.pick_count)
+            winner_god.pick_count += 1
+            winner_god.win_count += 1
+            print(winner_god.pick_count)
+            winner_god.save()
+
+        for loser_god in [dual_model.loser_god_1, dual_model.loser_god_2]:
+            loser_god = God.objects.get(god_code=loser_god)
+            loser_god.pick_count += 1
+            loser_god.save()
+
+        for baned_god in [dual_model.winner_god_ban, dual_model.loser_god_ban]:
+            baned_god = God.objects.get(god_code=baned_god)
+            baned_god.pick_count += 1
+            baned_god.ban_count += 1
+            baned_god.save()
+
+        for god in [dual_model.winner_god_1, dual_model.winner_god_2, dual_model.loser_god_1, dual_model.loser_god_2, dual_model.winner_god_ban, dual_model.loser_god_ban]:
+            god = God.objects.get(god_code=god)
+            print(god)
+            try:
+                god.ban_ratio = round(god.ban_count/god.pick_count*100, 1)
+            except ZeroDivisionError:
+                god.ban_ratio = 0
+            god.win_ratio = round(god.win_count/total_game*100, 1)
+            god.pick_ratio = round(god.pick_count/total_game*100, 1)
+            god.save()
+
+
+
         return HttpResponse(json.dumps(request.POST), content_type="application/json")
     else:
         return HttpResponse("404")
@@ -117,7 +163,49 @@ def tabletop(request):
 
         dual_model.save()
 
+        total_game = TotalGame.objects.all()
+        if len(total_game) == 0:
+            total_game = TotalGame()
+            total_game.total = 1
+            total_game.save()
+        else:
+            total_game = total_game[0]
+            total_game.total += 1
+            total_game.save()
+        total_game = total_game.total
+
+        for winner_god in [dual_model.winner_god_1, dual_model.winner_god_2]:
+            winner_god = God.objects.get(god_code=winner_god)
+            print(winner_god)
+            print(winner_god.pick_count)
+            winner_god.pick_count += 1
+            winner_god.win_count += 1
+            print(winner_god.pick_count)
+            winner_god.save()
+
+        for loser_god in [dual_model.loser_god_1, dual_model.loser_god_2]:
+            loser_god = God.objects.get(god_code=loser_god)
+            loser_god.pick_count += 1
+            loser_god.save()
+
+        for baned_god in [dual_model.winner_god_ban, dual_model.loser_god_ban]:
+            baned_god = God.objects.get(god_code=baned_god)
+            baned_god.pick_count += 1
+            baned_god.ban_count += 1
+            baned_god.save()
+
+        for god in [dual_model.winner_god_1, dual_model.winner_god_2, dual_model.loser_god_1, dual_model.loser_god_2,
+                    dual_model.winner_god_ban, dual_model.loser_god_ban]:
+            god = God.objects.get(god_code=god)
+            print(god)
+            try:
+                god.ban_ratio = round(god.ban_count / god.pick_count * 100, 1)
+            except ZeroDivisionError:
+                god.ban_ratio = 0
+            god.win_ratio = round(god.win_count / total_game * 100, 1)
+            god.pick_ratio = round(god.pick_count / total_game * 100, 1)
+            god.save()
+
         return HttpResponse(json.dumps(request.POST), content_type="application/json")
     else:
         return HttpResponse("404")
-

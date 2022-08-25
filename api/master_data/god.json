@@ -576,7 +576,7 @@
     "model": "api.God",
     "fields": {
       "god_code": "17-A1",
-      "god_name": "허무신",
+      "god_name": "하츠미-허무신",
       "god_keyword": "잠수",
       "god_text": "잠수를 수행한다는 효과를 발동할 때, 잠수전진 또는 잠수후퇴를 비밀리에 덮어둔다.",
       "pick_count": "0",

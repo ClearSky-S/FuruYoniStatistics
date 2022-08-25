@@ -44,8 +44,10 @@ class Dual(models.Model):
     def __str__(self):
         return "대전기록" + str(self.time)
 
+
 class TotalGame(models.Model):
     total = models.IntegerField()
+
 
 class God(models.Model):
     # 02-O
@@ -60,19 +62,21 @@ class God(models.Model):
 
     pick_count = models.IntegerField()
     # pick / total
-    pick_ratio = models.DecimalField(max_digits=3, decimal_places=1)
+    pick_ratio = models.DecimalField(max_digits=4, decimal_places=1)
 
     ban_count = models.IntegerField()
     # ban / pick
-    ban_ratio = models.DecimalField(max_digits=3, decimal_places=1)
+    ban_ratio = models.DecimalField(max_digits=4, decimal_places=1)
 
     win_count = models.IntegerField()
     # win / (pick-ban)
-    win_ratio = models.DecimalField(max_digits=3, decimal_places=1)
+    win_ratio = models.DecimalField(max_digits=4, decimal_places=1)
+
     def __str__(self):
         return self.god_name
-"""
 
+
+"""
 class Partner(models.Model):
     pick_count_saine_O = 0
     win_count_saine_O = 0

@@ -7,7 +7,23 @@
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <h5 class="display-8 border-bottom border-success pb-3 mt-2">승자</h5>
-                <div>덱코드 {{ deck_code }}</div>
+                <div class="row align-items-center g-3 mb-3">
+                    <div class="col-auto">
+                        <label for="winner-deck-code" class="form-label mb-0">덱코드</label>
+                        </div>
+                    <div class="col-auto">
+                        <input disabled type="text" class="form-control" id="winner-deck-code" value="{{ winner_deck_code }}">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-pink" id="winner-copy">복사</button>
+                    </div>
+                    <script>
+                        function copy_winner(){
+                            navigator.clipboard.writeText(document.getElementById("winner-deck-code").value);
+                        }
+                        document.getElementById("winner-copy").onclick=copy_winner;
+                    </script>
+                </div>
                 <div class="row">
                     <div class="col-4 mb-4 border">
                         <table class="table table-striped-pink mt-2">
@@ -18,9 +34,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {% for card in deck_list %}
+                            {% for card in winner_deck_list %}
                                 <tr>
-                                    <td>{{ card }}<img src="{% static 'img/table/table_saine.png' %}"/></td>
+                                    <td>{{ card.name }}<img src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
 
@@ -29,26 +45,42 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ '02-O' }}.png" class="card-img-top"
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god1_code }}.png" class="card-img-top"
                                  alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title">{{ god1 }}</h5>
+                                <h5 class="card-title">{{ winner_god1 }}</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_01-A1.png' %}" class="card-img-top" alt="...">
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god2_code }}.png" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title">{{ god2 }}</h5>
+                                <h5 class="card-title">{{ winner_god2 }}</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
-                <h5 class="display-8 border-bottom border-success pb-3 mt-2">승자</h5>
-                <div>덱코드 {{ deck_code }}</div>
+                <h5 class="display-8 border-bottom border-danger pb-3 mt-2">패자</h5>
+                <div class="row align-items-center g-3 mb-3">
+                    <div class="col-auto">
+                        <label for="loser-deck-code" class="form-label mb-0">덱코드</label>
+                        </div>
+                    <div class="col-auto">
+                        <input disabled type="text" class="form-control" id="loser-deck-code" value="{{ loser_deck_code }}">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-pink" id="loser-copy">복사</button>
+                    </div>
+                    <script>
+                        function copy_loser(){
+                            navigator.clipboard.writeText(document.getElementById("loser-deck-code").value);
+                        }
+                        document.getElementById("loser-copy").onclick=copy_loser;
+                    </script>
+                </div>
                 <div class="row">
                     <div class="col-4 mb-4 border">
                         <table class="table table-striped-pink mt-2">
@@ -59,9 +91,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            {% for card in deck_list %}
+                            {% for card in loser_deck_list %}
                                 <tr>
-                                    <td>{{ card }}<img src="{% static 'img/table/table_saine.png' %}"/></td>
+                                    <td>{{ card.name }}<img src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
 
@@ -70,18 +102,18 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ '02-O' }}.png" class="card-img-top"
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god1_code }}.png" class="card-img-top"
                                  alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title">{{ god1 }}</h5>
+                                <h5 class="card-title">{{ loser_god1 }}</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_01-A1.png' %}" class="card-img-top" alt="...">
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god2_code }}.png" class="card-img-top" alt="...">
                             <div class="card-body text-center">
-                                <h5 class="card-title">{{ god2 }}</h5>
+                                <h5 class="card-title">{{ loser_god2 }}</h5>
                             </div>
                         </div>
                     </div>

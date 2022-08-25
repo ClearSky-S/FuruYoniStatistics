@@ -14,140 +14,24 @@
                 <table class="table table-striped-pink">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th><a href="#">여신</a></th>
-                        <th><a href="#">승률 &#9660;</a></th>
-                        <th><a href="#">픽률 &#9660;</a></th>
-                        <th><a href="#">밴 &#9660;</a></th>
+                        <th></th>
+                        <th>여신</th>
+                        <th><a href="/god/win">승률 &#9660;</a></th>
+                        <th><a href="/god/pick">픽률 &#9660;</a></th>
+                        <th><a href="/god/ban">밴 &#9660;</a></th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>사이네 <img src="{% static 'img/table/table_saine.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
+                    {% for god in god_list %}
+                        <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ god.god_name }} <img src="{% static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
+                        <td>{{ god.win_ratio }}%</td>
+                        <td>{{ god.pick_ratio }}%</td>
+                        <td>{{ god.ban_ratio }}%</td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>「대장장이」 하가네 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>유리나 <img src="{% static 'img/table/table_yurina.png' %}"/></td>
-                        <td>54.3%</td>
-                        <td>18.4%</td>
-                        <td>26.3%</td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

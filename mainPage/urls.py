@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.home, name='home'),
 
     path('god', views.god),
+    path('god/<slug:sort_by>', views.god),
 
     path('card', views.card_god_select),
     path('card/<slug:god>', views.card),
@@ -18,6 +19,6 @@ urlpatterns = [
     path('trio/<slug:god1>/<slug:god2>', views.trio),
 
     path('dual', views.dual),
-    path('dual/<int:dual_id>/<int:isWinner>', views.decklist),
+    path('dual/<int:dual_id>', views.decklist),
 
 ]
