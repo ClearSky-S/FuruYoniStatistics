@@ -7,5 +7,6 @@ urlpatterns = [
     path('dual', views.dual),
     path('dual/manual', views.dual_manual_post),
     path('test', views.tabletop),
+    path('tabletop/result', views.tabletop),
 
 ]

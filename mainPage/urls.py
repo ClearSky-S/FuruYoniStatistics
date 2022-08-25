@@ -18,6 +18,6 @@ urlpatterns = [
     path('trio/<slug:god1>/<slug:god2>', views.trio),
 
     path('dual', views.dual),
-    path('dual/<int:number>/<int:isWinner>', views.decklist),
+    path('dual/<int:dual_id>/<int:isWinner>', views.decklist),
 
 ]

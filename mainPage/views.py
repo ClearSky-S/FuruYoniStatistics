@@ -42,5 +42,42 @@ def dual(request):
         'dual_list': dual_list
     }
     return render(request, 'dual.html', context)
-def decklist(request, number,isWinner):
-    return render(request, 'decklist.html')
+def decklist(request, dual_id, isWinner):
+    dual_model = Dual.objects.get(id=dual_id)
+    if isWinner:
+        context = {
+            "god1": dual_model.winner_god_1,
+            "god2": dual_model.winner_god_2,
+            "deck_list": [
+                dual_model.winner_normal_card_1,
+                dual_model.winner_normal_card_2,
+                dual_model.winner_normal_card_3,
+                dual_model.winner_normal_card_4,
+                dual_model.winner_normal_card_5,
+                dual_model.winner_normal_card_6,
+                dual_model.winner_normal_card_7,
+                dual_model.winner_special_card_1,
+                dual_model.winner_special_card_2,
+                dual_model.winner_special_card_3,
+            ],
+            "deck_code": dual_model.winner_deck_code
+        }
+    else:
+        context = {
+            "god1": dual_model.loser_god_1,
+            "god2": dual_model.loser_god_2,
+            "deck_list": [
+                dual_model.loser_normal_card_1,
+                dual_model.loser_normal_card_2,
+                dual_model.loser_normal_card_3,
+                dual_model.loser_normal_card_4,
+                dual_model.loser_normal_card_5,
+                dual_model.loser_normal_card_6,
+                dual_model.loser_normal_card_7,
+                dual_model.loser_special_card_1,
+                dual_model.loser_special_card_2,
+                dual_model.loser_special_card_3,
+            ],
+            "deck_code": dual_model.loser_deck_code
+        }
+    return render(request, 'decklist.html', context)
