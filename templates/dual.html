@@ -34,7 +34,7 @@
                         <td>{{ dual.time}} </td>
                         <td>{{ dual.winner_name }}</td>
                         <td>{{ dual.winner_god_1 }} <img src="{% static 'img/table/table_saine.png' %}"/></td>
-                        <td>{{ dual.winner_god_2 }} <img class="god2" src="{% static 'img/table/table_saine.png' %}"/></td>
+                        <td>{{ dual.winner_god_2 }} <img class="god2" src="{% static 'img/table/'|add:'table_saine.png' %}"/></td>
                         <td>{{ dual.winner_god_ban }}</td>
                         <td class="pt-1 pb-0"><a href="/dual/{{ dual.id }}/1" class="btn btn-pink py-0 px-2">보기</a></td>
                         <td>{{ dual.loser_name }}</td>

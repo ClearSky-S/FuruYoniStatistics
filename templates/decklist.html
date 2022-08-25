@@ -4,49 +4,90 @@
 
     <div class="container">
         <h2 class="display-6 border-pink pb-3 mt-5 ">덱리스트</h2>
-
         <div class="row">
-            <div class="col-md-8 mb-4">
+            <div class="col-lg-6 mb-4">
+                <h5 class="display-8 border-bottom border-success pb-3 mt-2">승자</h5>
                 <div>덱코드 {{ deck_code }}</div>
-                <table class="table table-striped-pink">
-                    <thead>
-                    <tr>
-                        <th></th>
-                        <th>카드</th>
-                        <th>여신</th>
+                <div class="row">
+                    <div class="col-4 mb-4 border">
+                        <table class="table table-striped-pink mt-2">
+                            <thead>
+                            <tr>
+                                <th>카드</th>
 
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for card in deck_list %}
-                        <tr>
-                        <td>1</td>
-                        <td>{{ card }}</td>
-                        <td>사이네<img src="{% static 'img/table/table_saine.png' %}"/> </td>
-                    </tr>
-                    {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for card in deck_list %}
+                                <tr>
+                                    <td>{{ card }}<img src="{% static 'img/table/table_saine.png' %}"/></td>
+                                </tr>
+                            {% endfor %}
 
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-2 mb-4">
-                <div class="card">
-                    <img src="{% static 'img/god/full_saine.png' %}" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ god1 }}</h5>
-                        <p class="card-text"><b>팔상 </b>- 당신의 오라가 1 이하라면, 몇몇 카드가 강화된다.</p>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-4 mb-4">
+                        <div class="card">
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ '02-O' }}.png" class="card-img-top"
+                                 alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{ god1 }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mb-4">
+                        <div class="card">
+                            <img src="{% static 'img/god/tarots/tarot_01-A1.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{ god2 }}</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-2 mb-4">
-                <div class="card">
-                    <img src="{% static 'img/god/full_saine.png' %}" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ god2 }}</h5>
-                        <p class="card-text"><b>팔상 </b>- 당신의 오라가 1 이하라면, 몇몇 카드가 강화된다.</p>
+            <div class="col-lg-6 mb-4">
+                <h5 class="display-8 border-bottom border-success pb-3 mt-2">승자</h5>
+                <div>덱코드 {{ deck_code }}</div>
+                <div class="row">
+                    <div class="col-4 mb-4 border">
+                        <table class="table table-striped-pink mt-2">
+                            <thead>
+                            <tr>
+                                <th>카드</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for card in deck_list %}
+                                <tr>
+                                    <td>{{ card }}<img src="{% static 'img/table/table_saine.png' %}"/></td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-4 mb-4">
+                        <div class="card">
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ '02-O' }}.png" class="card-img-top"
+                                 alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{ god1 }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mb-4">
+                        <div class="card">
+                            <img src="{% static 'img/god/tarots/tarot_01-A1.png' %}" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">{{ god2 }}</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 {% endblock %}
