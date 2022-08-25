@@ -1,25 +1,50 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Dual(models.Model):
-    time = models.DateTimeField()
+    time = models.DateTimeField(auto_now_add=True)
     isRank = models.BooleanField()
 
-    winner_name = models.CharField(max_length=200)
-    winner_god1 = models.CharField(max_length=200)
-    winner_god2 = models.CharField(max_length=200)
-    winner_normal_card_list = models.JSONField(default='{}')
-    winner_special_card_list = models.JSONField(default='{}')
+    winner_name = models.CharField(max_length=50)
+    winner_god_1 = models.CharField(max_length=20)
+    winner_god_2 = models.CharField(max_length=20)
+    winner_god_ban = models.CharField(max_length=20)
+    winner_deck_code = models.CharField(max_length=30)
 
-    loser_name = models.CharField(max_length=200)
-    loser_god1 = models.CharField(max_length=200)
-    loser_god2 = models.CharField(max_length=200)
-    loser_normal_card_list = models.JSONField(default='{}')
-    loser_special_card_list = models.JSONField(default='{}')
+    winner_normal_card_1 = models.CharField(max_length=20)
+    winner_normal_card_2 = models.CharField(max_length=20)
+    winner_normal_card_3 = models.CharField(max_length=20)
+    winner_normal_card_4 = models.CharField(max_length=20)
+    winner_normal_card_5 = models.CharField(max_length=20)
+    winner_normal_card_6 = models.CharField(max_length=20)
+    winner_normal_card_7 = models.CharField(max_length=20)
 
+    winner_special_card_1 = models.CharField(max_length=20)
+    winner_special_card_2 = models.CharField(max_length=20)
+    winner_special_card_3 = models.CharField(max_length=20)
 
+    loser_name = models.CharField(max_length=50)
+    loser_god_1 = models.CharField(max_length=20)
+    loser_god_2 = models.CharField(max_length=20)
+    loser_god_ban = models.CharField(max_length=20)
+    loser_deck_code = models.CharField(max_length=30)
+
+    loser_normal_card_1 = models.CharField(max_length=20)
+    loser_normal_card_2 = models.CharField(max_length=20)
+    loser_normal_card_3 = models.CharField(max_length=20)
+    loser_normal_card_4 = models.CharField(max_length=20)
+    loser_normal_card_5 = models.CharField(max_length=20)
+    loser_normal_card_6 = models.CharField(max_length=20)
+    loser_normal_card_7 = models.CharField(max_length=20)
+
+    loser_special_card_1 = models.CharField(max_length=20)
+    loser_special_card_2 = models.CharField(max_length=20)
+    loser_special_card_3 = models.CharField(max_length=20)
+
+    def __str__(self):
+        return "대전기록" + str(self.time)
+
+"""
 
 class God(models.Model):
     god_code = 0
@@ -61,3 +86,4 @@ class Card(models.Model):
     win_count3 = 0
     win_rate3 = 0
 
+"""

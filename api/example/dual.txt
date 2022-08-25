@@ -1,0 +1,39 @@
+{
+    ["isRank"]="True",
+
+    ["winner_name"]="사이네단",
+    ["winner_god_1"]="01-O",
+    ["winner_god_2"]="02-A2",
+    ["winner_god_ban"]="04-O", // 없으면 None
+    ["winner_deck_code"]="111D51150AAC",
+
+    ["winner_normal_card_1"]="01-O-N-1",
+    ["winner_normal_card_2"]="01-O-N-2",
+    ["winner_normal_card_3"]="01-O-N-3",
+    ["winner_normal_card_4"]="01-O-N-1",
+    ["winner_normal_card_5"]="02-A2-N-1",
+    ["winner_normal_card_6"]="02-A2-N-1",
+    ["winner_normal_card_7"]="02-A2-N-1",
+
+    ["winner_special_card_1"]="01-O-S-1",
+    ["winner_special_card_2"]="01-O-S-2",
+    ["winner_special_card_3"]="02-A2-S-1",
+
+    ["loser_name"]="유리나단",
+    ["loser_god_1"]="01-O",
+    ["loser_god2"]="02-A2",
+    ["loser_god_ban"]="04-A2",
+    ["loser_deck_code"]="111D51150AAC",
+
+    ["loser_normal_card_1"]="01-O-N-1",
+    ["loser_normal_card_2"]="01-O-N-2",
+    ["loser_normal_card_3"]="01-O-N-3",
+    ["loser_normal_card_4"]="01-O-N-1",
+    ["loser_normal_card_5"]="02-A2-N-1",
+    ["loser_normal_card_6"]="02-A2-N-1",
+    ["loser_normal_card_7"]="02-A2-N-1",
+
+    ["loser_special_card_1"]="01-O-S-1",
+    ["loser_special_card_2"]="01-O-S-2",
+    ["loser_special_card_3"]="02-A2-S-1",
+}

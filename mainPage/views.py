@@ -2,7 +2,7 @@ from itertools import repeat
 
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from api.models import Dual
 # Create your views here.
 
 
@@ -37,6 +37,10 @@ def trio(request, god1, god2):
     return render(request, 'trio.html')
 
 def dual(request):
-    return render(request, 'dual.html')
+    dual_list = Dual.objects.order_by('-time')
+    context = {
+        'dual_list': dual_list
+    }
+    return render(request, 'dual.html', context)
 def decklist(request, number,isWinner):
     return render(request, 'decklist.html')

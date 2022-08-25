@@ -2,24 +2,144 @@
 {% load static %}
 {% block content %}
     <div class="container">
+        <h2 class="display-6 border-pink pb-3 mt-5 ">대전 결과 제출</h2>
         <div class="row justify-content-center mt-5">
             <div class="col-lg-6">
-                <form>
+                <form action="/api/dual" method="post">
                     {% csrf_token %}
-                    <div class="mb-3 d-none">
-                        <label class="form-label" for="inputServer">Server IP</label>
-                        <input type="text" class="form-control" id="inputServer" disabled
-                               value="/api/dual"
-                        >
+                    <div class="mb-3">
+                        <label for="isRank" class="form-label">랭크</label>
+                        <input type="text" class="form-control" name="isRank" id="isRank" value="True">
+                    </div>
+
+                    <br/><br/>
+                    <div class="mb-3">
+                        <label for="winner_name" class="form-label">승자</label>
+                        <input type="text" class="form-control" name="winner_name" id="winner_name" value="사이네단">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="inputJSON">JSON data</label>
-                        <textarea rows="20" type="text" class="form-control" id="inputJSON">
-
-    {"a":1}
-</textarea>
-
+                        <label for="winner_god_1" class="form-label">여신 1</label>
+                        <input type="text" class="form-control" name="winner_god_1" id="winner_god_1" value="01-O">
                     </div>
+                    <div class="mb-3">
+                        <label for="winner_god_1" class="form-label">여신 2</label>
+                        <input type="text" class="form-control" name="winner_god_1" id="winner_god_1" value="02-A2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_god_ban" class="form-label">금지 여신 (없으면 None)</label>
+                        <input type="text" class="form-control" name="winner_god_ban" id="winner_god_ban" value="04-O">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_deck_code" class="form-label">덱코드 (모르면 None)</label>
+                        <input type="text" class="form-control" name="winner_deck_code" id="winner_deck_code" value="111D51150AAC">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="winner_normal_card_1" class="form-label">카드 1</label>
+                        <input type="text" class="form-control" name="winner_normal_card_1" id="winner_normal_card_1" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_normal_card_2" class="form-label">카드 2</label>
+                        <input type="text" class="form-control" name="winner_normal_card_2" id="winner_normal_card_2" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_normal_card_3" class="form-label">카드 3</label>
+                        <input type="text" class="form-control" name="winner_normal_card_3" id="winner_normal_card_3" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_normal_card_4" class="form-label">카드 4</label>
+                        <input type="text" class="form-control" name="winner_normal_card_4" id="winner_normal_card_4" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_normal_card_5" class="form-label">카드 5</label>
+                        <input type="text" class="form-control" name="winner_normal_card_5" id="winner_normal_card_5" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_normal_card_6" class="form-label">카드 6</label>
+                        <input type="text" class="form-control" name="winner_normal_card_6" id="winner_normal_card_6" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_normal_card_7" class="form-label">카드 7</label>
+                        <input type="text" class="form-control" name="winner_normal_card_7" id="winner_normal_card_7" value="01-O-N-1">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="winner_special_card_1" class="form-label">비장패 1</label>
+                        <input type="text" class="form-control" name="winner_special_card_1" id="winner_special_card_1" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_special_card_2" class="form-label">비장패 2</label>
+                        <input type="text" class="form-control" name="winner_special_card_2" id="winner_special_card_2" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="winner_special_card_3" class="form-label">비장패 3</label>
+                        <input type="text" class="form-control" name="winner_special_card_3" id="winner_special_card_3" value="01-O-N-1">
+                    </div>
+                    <br/><br/>
+
+                    <div class="mb-3">
+                        <label for="loser_name" class="form-label">패자</label>
+                        <input type="text" class="form-control" name="loser_name" id="loser_name" value="사이네단">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_god_1" class="form-label">여신 1</label>
+                        <input type="text" class="form-control" name="loser_god_1" id="loser_god_1" value="01-O">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_god2" class="form-label">여신 2</label>
+                        <input type="text" class="form-control" name="loser_god2" id="loser_god2" value="02-A2">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_god_ban" class="form-label">금지 여신(없으면 None)</label>
+                        <input type="text" class="form-control" name="loser_god_ban" id="loser_god_ban" value="04-O">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_deck_code" class="form-label">덱코드 (모르면 None)</label>
+                        <input type="text" class="form-control" name="loser_deck_code" id="loser_deck_code" value="111D51150AAC">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="loser_normal_card_1" class="form-label">카드 1</label>
+                        <input type="text" class="form-control" name="loser_normal_card_1" id="loser_normal_card_1" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_normal_card_2" class="form-label">카드 2</label>
+                        <input type="text" class="form-control" name="loser_normal_card_2" id="loser_normal_card_2" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_normal_card_3" class="form-label">카드 3</label>
+                        <input type="text" class="form-control" name="loser_normal_card_3" id="loser_normal_card_3" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_normal_card_4" class="form-label">카드 4</label>
+                        <input type="text" class="form-control" name="loser_normal_card_4" id="loser_normal_card_4" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_normal_card_5" class="form-label">카드 5</label>
+                        <input type="text" class="form-control" name="loser_normal_card_5" id="loser_normal_card_5" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_normal_card_6" class="form-label">카드 6</label>
+                        <input type="text" class="form-control" name="loser_normal_card_6" id="loser_normal_card_6" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_normal_card_7" class="form-label">카드 7</label>
+                        <input type="text" class="form-control" name="loser_normal_card_7" id="loser_normal_card_7" value="01-O-N-1">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="loser_special_card_1" class="form-label">비장패 1</label>
+                        <input type="text" class="form-control" name="loser_special_card_1" id="loser_special_card_1" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_special_card_2" class="form-label">비장패 2</label>
+                        <input type="text" class="form-control" name="loser_special_card_2" id="loser_special_card_2" value="01-O-N-1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="loser_special_card_3" class="form-label">비장패 3</label>
+                        <input type="text" class="form-control" name="loser_special_card_3" id="loser_special_card_3" value="01-O-N-1">
+                    </div>
+
                     <button type="submit" class="btn btn-pink" id="btn-send">Send</button>
                 </form>
             </div>
@@ -31,8 +151,9 @@
         const btn_send = document.querySelector("#btn-send");
 
         const url = document.querySelector("#inputServer").value
+        /*
         btn_send.addEventListener("click", (e) => {
-            e.preventDefault();
+            {#e.preventDefault();#}
             btn_send.disabled = true;
 
             const jsonString = document.querySelector("#inputJSON").value
@@ -59,6 +180,7 @@
 
             })
         });
+        */
     </script>
 
 {% endblock %}
