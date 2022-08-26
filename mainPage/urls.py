@@ -18,7 +18,7 @@ urlpatterns = [
     path('trio/<slug:god1>', views.trio_god_select_2),
     path('trio/<slug:god1>/<slug:god2>', views.trio),
 
-    path('dual', views.dual),
-    path('dual/<int:dual_id>', views.decklist),
+    path('duel', views.dual),
+    path('duel/<int:dual_id>', views.decklist),
 
 ]

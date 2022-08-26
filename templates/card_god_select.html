@@ -18,6 +18,7 @@
                 <img src="{% static 'img/god/tarots/tarot_' %}{{ god.god_code }}.png" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <p class="card-title">{{ god.god_name }}</p>
+                    <p class="card-title">{{ god.god_code }}</p>
                     <a href="/card/{{ god.god_code }}" class="btn btn-pink">선택</a>
                 </div>
             </div>

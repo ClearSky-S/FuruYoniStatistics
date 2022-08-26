@@ -2,7 +2,7 @@ from itertools import repeat
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from api.models import Dual, God
+from api.models import Dual, God, Card
 
 
 # Create your views here.
@@ -111,11 +111,12 @@ def decklist(request, dual_id):
         dual_model.winner_special_card_3,
     ]
     winner_deck_list = map(lambda x: {
-        "name": x,
+        "name": Card.objects.filter(card_code=x)[0].card_name,
         "code": x,
         "god_code": dual_model.winner_god_1 if dual_model.winner_god_1[:2] == x[:2]
         else dual_model.winner_god_2
     }, winner_deck_list)
+
 
     loser_deck_list = [
         dual_model.loser_normal_card_1,
@@ -130,7 +131,7 @@ def decklist(request, dual_id):
         dual_model.loser_special_card_3,
     ]
     loser_deck_list = map(lambda x: {
-        "name": x,
+        "name": Card.objects.filter(card_code=x)[0].card_name,
         "code": x,
         "god_code": dual_model.loser_god_1 if dual_model.loser_god_1[:2] == x[:2]
         else dual_model.loser_god_2

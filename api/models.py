@@ -81,25 +81,19 @@ class Partner(models.Model):
     pick_count_saine_O = 0
     win_count_saine_O = 0
 
+"""
 
 class Card(models.Model):
+    # card_code,god_code,card_name,pick_count,pick_ratio,win_count,win_ratio
     card_code = models.CharField(max_length=200)
-    god = 0
-    god2 = 0
-    god3 = 0
+    god_code = models.CharField(max_length=20)
+    god = models.ForeignKey(God, on_delete=models.CASCADE)
+    card_name = models.CharField(max_length=50)
+    pick_count = models.IntegerField()
+    pick_ratio = models.DecimalField(max_digits=4, decimal_places=1)
+    win_count = models.IntegerField()
+    win_ratio = models.DecimalField(max_digits=4, decimal_places=1)
+    def __str__(self):
+        return self.card_name + '(' + self.card_code + ')'
 
-    use_count = 0
-    use_rate = 0
-    use_count2 = 0
-    use_rate = 0
-    use_count3 = 0
-    use_rate = 0
 
-    win_count = 0
-    win_rate = 0
-    win_count2 = 0
-    win_rate2 = 0
-    win_count3 = 0
-    win_rate3 = 0
-
-"""
