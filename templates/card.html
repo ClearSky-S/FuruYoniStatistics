@@ -3,96 +3,39 @@
 {% block content %}
 
     <div class="container">
-        <h2 class="display-6 border-pink pb-3 mt-5 ">카드 티어 - 사이네</h2>
+        <h2 class="display-6 border-pink pb-3 mt-5 ">카드 분석 - {{ god.god_name }}</h2>
 
         <div class="row">
             <div class="col-md-9 mb-4">
                 <table class="table table-striped-pink">
                     <thead>
                     <tr>
-                        <th></th>
-                        <th><a href="#">카드</a></th>
-                        <th><a href="#">승률 &#9660;</a></th>
-                        <th><a href="#">픽률 &#9660;</a></th>
+                        <th>코드</th>
+                        <th>카드</th>
+                        <th>픽률</th>
+                        <th>승률</th>
 
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
+                    {% for card in card_list %}
+                        <tr>
+                            <td>{{ card.card_code}}</td>
+                            <td>{{ card.card_name }}</td>
+                            <td>{{ card.pick_ratio }}%</td>
+                            <td>{{ card.win_ratio }}%</td>
+                        </tr>
+                    {% endfor %}
+
                     </tbody>
                 </table>
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/god/full_saine.png' %}" class="card-img-top" alt="...">
+                    <img src="{% static 'img/god/tarots/tarot_' %}{{ god.god_code }}.png" class="card-img-top" alt="...">
                     <div class="card-body text-center">
-                        <h5 class="card-title">사이네</h5>
-                        <p class="card-text"><b>팔상 </b>- 당신의 오라가 1 이하라면, 몇몇 카드가 강화된다.</p>
+                        <h5 class="card-title">{{ god.god_name }}</h5>
+                        <p class="card-text"><b>{{ god.god_keyword }} </b>- {{ god.god_text }}</p>
                     </div>
                 </div>
             </div>

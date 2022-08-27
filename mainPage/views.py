@@ -2,7 +2,7 @@ from itertools import repeat
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from api.models import Dual, God, Card
+from api.models import Dual, God, Card, Partner
 
 
 # Create your views here.
@@ -13,11 +13,14 @@ def index(request):
 
 
 def home(request):
-    context = {"god_list": God.objects.order_by("-win_ratio")[0:10]}
+    context = {
+        "god_list": God.objects.order_by("-pick_ratio")[0:10],
+        "card_list": Card.objects.order_by("-pick_ratio")[0:10]
+    }
     return render(request, 'home.html', context)
 
 
-def god(request, sort_by="win"):
+def god(request, sort_by="pick"):
     context = {}
     if sort_by == "win":
         context = {"god_list": God.objects.order_by("-win_ratio")}
@@ -34,8 +37,14 @@ def card_god_select(request):
     return render(request, 'card_god_select.html', context)
 
 
-def card(request, god):
-    return render(request, 'card.html')
+def card(request, god_code):
+    god_code = God.objects.get(god_code=god_code)
+    card_list = Card.objects.filter(god=god_code)
+    context = {
+        "god": god_code,
+        "card_list": card_list
+    }
+    return render(request, 'card.html', context)
 
 
 def partner_god_select(request):
@@ -43,8 +52,27 @@ def partner_god_select(request):
     return render(request, 'partner_god_select.html', context)
 
 
-def partner(request, god):
-    return render(request, 'partner.html')
+def partner(request, god_code, sort_by="pick"):
+    if sort_by == "win":
+        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-win_ratio")
+    else:
+        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-pick_ratio")
+    god_list = []
+    for partner in partner_list:
+        partner_god = partner.gods.all()[0] if partner.gods.all()[0].god_code != god_code else partner.gods.all()[1]
+        god_list.append({
+            "god_name": partner_god.god_name,
+            "pick_ratio": partner.pick_ratio,
+            "win_ratio": partner.win_ratio,
+
+        })
+    context = {
+        "god": God.objects.get(god_code=god_code),
+        "god_list": god_list,
+    }
+    partner_list = Partner.objects.filter(gods__god_code=god_code).order_by('-pick_ratio')
+
+    return render(request, 'partner.html', context)
 
 
 def trio_god_select_1(request):
@@ -52,13 +80,61 @@ def trio_god_select_1(request):
     return render(request, 'trio_god_select_1.html', context)
 
 
-def trio_god_select_2(request, god1):
-    context = {"god_list": God.objects.all()}
+def trio_god_select_2(request,  god_code_1):
+    context = {
+        "god_list": God.objects.exclude(god_code__contains=god_code_1[:2]),
+        "god1": God.objects.get(god_code= god_code_1)
+    }
     return render(request, 'trio_god_select_2.html', context)
 
 
-def trio(request, god1, god2):
-    return render(request, 'trio.html')
+def trio(request, god_code_1, god_code_2, sort_by):
+    god1 = God.objects.get(god_code=god_code_1)
+    god2 = God.objects.get(god_code=god_code_2)
+    god_list = God.objects.exclude(god_code__contains=god_code_1[:2]).exclude(god_code__contains=god_code_2[:2])
+    trio_list = []
+    for god in god_list:
+        partner1 = Partner.objects.filter(gods__god_code=god_code_1).filter(gods=god)
+        partner2 = Partner.objects.filter(gods__god_code=god_code_2).filter(gods=god)
+        trio_list.append({
+            "god": god,
+            "avg_win_ratio": (partner1[0].win_ratio+partner2[0].win_ratio)/2,
+            "avg_pick_ratio": (partner1[0].pick_ratio+partner2[0].pick_ratio)/2,
+        })
+    # trio_list.sort(key=)
+
+    context = {
+        "god1": god1,
+        "god2": god2,
+        "trio_list": trio_list,
+    }
+    partner_list_1 = Partner.objects.filter(gods__god_code=god_code_1).exclude(gods=god2)
+    partner_list_2 = Partner.objects.filter(gods__god_code=god_code_2).exclude(gods=god1)
+
+    context["partner_list_1"] = partner_list_1
+    # print(context)
+    """
+    if sort_by == "win":
+        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-win_ratio")
+    else:
+        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-pick_ratio")
+    god_list = []
+    for partner in partner_list:
+        partner_god = partner.gods.all()[0] if partner.gods.all()[0].god_code != god_code else partner.gods.all()[1]
+        god_list.append({
+            "god_name": partner_god.god_name,
+            "pick_ratio": partner.pick_ratio,
+            "win_ratio": partner.win_ratio,
+
+        })
+    context = {
+        "god": God.objects.get(god_code=god_code),
+        "god_list": god_list,
+    }
+    partner_list = Partner.objects.filter(gods__god_code=god_code).order_by('-pick_ratio')
+    """
+
+    return render(request, 'trio.html', context)
 
 
 def dual(request):

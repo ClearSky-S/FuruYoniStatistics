@@ -40,7 +40,7 @@
                 <a href="/god" type="button" class="btn btn-pink">전체 여신 티어</a>
             </div>
             <div class="col-md-6 mb-4">
-                <h4 class=" border-pink pb-3 mt-4 ">카드 티어</h4>
+                <h4 class=" border-pink pb-3 mt-4 ">카드 티어 / 여신조합</h4>
                 <table class="table table-striped-pink">
                     <thead>
                     <tr>
@@ -52,75 +52,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>팔방 휘두르기</td>
-                        <td>사이네<img src="{% static 'img/table/table_saine.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
+                    {% for card in card_list %}
+                        <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ card.card_name }} <img src="{% static 'img/god/banner/banner_' %}{{ card.god.god_code }}.png"/></td>
+                        <td>{{ card.god.god_name }}</td>
+                        <td>{{ card.win_ratio }}%</td>
+                        <td>{{ card.pick_ratio }}%</td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>대연성 마테리얼</td>
-                        <td>「대장장이」 하가네<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr><tr>
-                        <td>1</td>
-                        <td>참</td>
-                        <td>유리나<img src="{% static 'img/table/table_yurina.png' %}"/> </td>
-                        <td>54.3%</td>
-                        <td>68.4%</td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
                 <a href="/card"type="button" class="btn btn-pink">여신별 카드 티어</a>

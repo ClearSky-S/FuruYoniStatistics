@@ -58,7 +58,7 @@ class God(models.Model):
     # 팔상
     god_keyword = models.CharField(max_length=10)
     # 당신의 오라가 1 이하라면...
-    god_text = models.CharField(max_length=200)
+    god_text = models.TextField(max_length=500)
 
     pick_count = models.IntegerField()
     # pick / total
@@ -76,15 +76,16 @@ class God(models.Model):
         return self.god_name
 
 
-"""
 class Partner(models.Model):
-    pick_count_saine_O = 0
-    win_count_saine_O = 0
-
-"""
+    gods = models.ManyToManyField(God)
+    pick_count = models.IntegerField()
+    pick_ratio = models.DecimalField(max_digits=4, decimal_places=1)
+    win_count = models.IntegerField()
+    win_ratio = models.DecimalField(max_digits=4, decimal_places=1)
+    def __str__(self):
+        return self.gods.all().__str__()
 
 class Card(models.Model):
-    # card_code,god_code,card_name,pick_count,pick_ratio,win_count,win_ratio
     card_code = models.CharField(max_length=200)
     god_code = models.CharField(max_length=20)
     god = models.ForeignKey(God, on_delete=models.CASCADE)
@@ -93,6 +94,7 @@ class Card(models.Model):
     pick_ratio = models.DecimalField(max_digits=4, decimal_places=1)
     win_count = models.IntegerField()
     win_ratio = models.DecimalField(max_digits=4, decimal_places=1)
+
     def __str__(self):
         return self.card_name + '(' + self.card_code + ')'
 

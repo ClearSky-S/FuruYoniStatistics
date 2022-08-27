@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="container">
-        <h2 class="display-6 border-pink pb-3 mt-5 ">카드 티어 - 여신 선택</h2>
+        <h2 class="display-6 border-pink pb-3 mt-5 ">카드 분석 - 여신 선택</h2>
         <div class="row my-3 justify-content-center">
 
 {#            <div class="card m-1" style="width: 180px;">#}
@@ -18,7 +18,6 @@
                 <img src="{% static 'img/god/tarots/tarot_' %}{{ god.god_code }}.png" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <p class="card-title">{{ god.god_name }}</p>
-                    <p class="card-title">{{ god.god_code }}</p>
                     <a href="/card/{{ god.god_code }}" class="btn btn-pink">선택</a>
                 </div>
             </div>
