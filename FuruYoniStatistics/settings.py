@@ -43,7 +43,7 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '121.138.65.97', 'clearsky777.iptime.org', 'http://furugg.pythonanywhere.com/']
+ALLOWED_HOSTS = ['127.0.0.1', '121.138.65.97', 'clearsky777.iptime.org', 'furugg.pythonanywhere.com']
 
 
 # Application definition
