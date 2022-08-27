@@ -16,8 +16,8 @@ class Command(BaseCommand):
                 card = Card()
                 card.card_code = row[0]
                 card.god_code = row[1]
-                card.god_id = God.objects.get(god_code=row[1])
+                card.god = God.objects.get(god_code=row[1])
                 card.card_name = row[2]
                 card.pick_count, card.pick_ratio, card.win_count, card.win_ratio = 0, 0, 0, 0
                 card.save()
-                print(card)
+                # print(card)

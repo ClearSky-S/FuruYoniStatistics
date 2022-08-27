@@ -101,39 +101,15 @@ def trio(request, god_code_1, god_code_2, sort_by):
             "avg_win_ratio": (partner1[0].win_ratio+partner2[0].win_ratio)/2,
             "avg_pick_ratio": (partner1[0].pick_ratio+partner2[0].pick_ratio)/2,
         })
-    # trio_list.sort(key=)
-
+    if sort_by == "win":
+        trio_list.sort(key=lambda x: x["avg_win_ratio"], reverse=True)
+    else:
+        trio_list.sort(key=lambda x: x["avg_pick_ratio"], reverse=True)
     context = {
         "god1": god1,
         "god2": god2,
         "trio_list": trio_list,
     }
-    partner_list_1 = Partner.objects.filter(gods__god_code=god_code_1).exclude(gods=god2)
-    partner_list_2 = Partner.objects.filter(gods__god_code=god_code_2).exclude(gods=god1)
-
-    context["partner_list_1"] = partner_list_1
-    # print(context)
-    """
-    if sort_by == "win":
-        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-win_ratio")
-    else:
-        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-pick_ratio")
-    god_list = []
-    for partner in partner_list:
-        partner_god = partner.gods.all()[0] if partner.gods.all()[0].god_code != god_code else partner.gods.all()[1]
-        god_list.append({
-            "god_name": partner_god.god_name,
-            "pick_ratio": partner.pick_ratio,
-            "win_ratio": partner.win_ratio,
-
-        })
-    context = {
-        "god": God.objects.get(god_code=god_code),
-        "god_list": god_list,
-    }
-    partner_list = Partner.objects.filter(gods__god_code=god_code).order_by('-pick_ratio')
-    """
-
     return render(request, 'trio.html', context)
 
 

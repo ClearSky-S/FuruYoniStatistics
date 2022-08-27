@@ -48,6 +48,9 @@ class Dual(models.Model):
 class TotalGame(models.Model):
     total = models.IntegerField()
 
+    def __str__(self):
+        return "Total Game: " + str(self.total)
+
 
 class God(models.Model):
     # 02-O
