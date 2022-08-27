@@ -84,7 +84,7 @@ class Partner(models.Model):
     pick_count = models.IntegerField()
     pick_ratio = models.DecimalField(max_digits=5, decimal_places=2)
     win_count = models.IntegerField()
-    win_ratio = models.DecimalField(max_digits=5, decimal_places=2)
+    win_ratio = models.DecimalField(max_digits=4, decimal_places=1)
     def __str__(self):
         return self.gods.all().__str__()
 
