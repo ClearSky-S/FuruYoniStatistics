@@ -1,9 +1,20 @@
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+a:hover {text-decoration:underline}
+a:active {text-decoration:none}
+.card a{
+    text-decoration:none;
+    color: black;
+}
+
 .navbar-nav a, a.navbar-brand {
     color: white !important;
+    text-decoration:none
 }
 
 .navbar-nav a:hover, a.navbar-brand:hover{
     color: #8c2c3e !important;
+    text-decoration:none
 }
 
 #banner{

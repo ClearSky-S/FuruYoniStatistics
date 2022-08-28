@@ -13,6 +13,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 mb-4">
+
                 <h4 class=" border-pink pb-3 mt-4 ">여신 티어</h4>
                 <table class="table table-striped-pink">
                     <thead>
@@ -28,18 +29,20 @@
                     <tbody>
                     {% for god in god_list %}
                         <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ god.god_name }} <img src="{% static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
-                        <td>{{ god.win_ratio }}%</td>
-                        <td>{{ god.pick_ratio }}%</td>
-                        <td>{{ god.ban_ratio }}%</td>
-                    </tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ god.god_name }} <img
+                                    src="{% static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
+                            <td>{{ god.win_ratio }}%</td>
+                            <td>{{ god.pick_ratio }}%</td>
+                            <td>{{ god.ban_ratio }}%</td>
+                        </tr>
                     {% endfor %}
                     </tbody>
                 </table>
                 <a href="/god" type="button" class="btn btn-pink">전체 여신 티어</a>
             </div>
-            <div class="col-md-6 mb-4">
+
+            <div class="col-md-6 mb-4 d-none">
                 <h4 class=" border-pink pb-3 mt-4 ">카드 분석</h4>
                 <table class="table table-striped-pink">
                     <thead>
@@ -54,26 +57,82 @@
                     <tbody>
                     {% for card in card_list %}
                         <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ card.card_name }} <img src="{% static 'img/god/banner/banner_' %}{{ card.god.god_code }}.png"/></td>
-                        <td>{{ card.god.god_name }}</td>
-                        <td>{{ card.win_ratio }}%</td>
-                        <td>{{ card.pick_ratio }}%</td>
-                    </tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ card.card_name }} <img
+                                    src="{% static 'img/god/banner/banner_' %}{{ card.god.god_code }}.png"/></td>
+                            <td>{{ card.god.god_name }}</td>
+                            <td>{{ card.win_ratio }}%</td>
+                            <td>{{ card.pick_ratio }}%</td>
+                        </tr>
                     {% endfor %}
                     </tbody>
                 </table>
-                <a href="/card"type="button" class="btn btn-pink">여신별 카드 분석</a>
+                <a href="/card" type="button" class="btn btn-pink">여신별 카드 분석</a>
             </div>
+
+            <div class="col-md-6 mb-4 row pt-3">
+
+                <div class="col-6">
+                    <a href="/card">
+                        <div class="card m-2">
+                            <img class="card-image text-center py-2"
+                                 src="{% static "img/god/sd/sd1.png" %}"/>
+                            <div class="card-body text-center">
+                                {#                                <p class="card-title">카드 분석</p>#}
+                                <div class="btn btn-pink">카드 분석</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/partner">
+                        <div class="card m-2">
+                            <img class="card-image text-center py-2"
+                                 src="{% static "img/god/sd/sd2.png" %}"/>
+                            <div class="card-body text-center">
+                                {#                                <p class="card-title">카드 분석</p>#}
+                                <div class="btn btn-pink">최고의 파트너</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/trio">
+                        <div class="card m-2">
+                            <img class="card-image text-center py-2"
+                                 src="{% static "img/god/sd/sd3.png" %}"/>
+                            <div class="card-body text-center">
+                                {#                                <p class="card-title">카드 분석</p>#}
+                                <div class="btn btn-pink">삼습일사</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="/duel">
+                        <div class="card m-2">
+                            <img class="card-image text-center py-2"
+                                 src="{% static "img/god/sd/sd4.png" %}"/>
+                            <div class="card-body text-center">
+                                {#                                <p class="card-title">카드 분석</p>#}
+                                <div class="btn btn-pink">대전기록</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+
         </div>
     </div>
 
     <div id="sakura-box">
-    <link rel="stylesheet" href="{% static 'css/sakura.css' %}"/>
-    <script src="{% static "js/sakura.js" %}"></script>
-    <script>
-        const sakura = new Sakura('#sakura-box', {});
-    </script>
+        <link rel="stylesheet" href="{% static 'css/sakura.css' %}"/>
+        <script src="{% static "js/sakura.js" %}"></script>
+        <script>
+            const sakura = new Sakura('#sakura-box', {});
+        </script>
     </div>
 
 
