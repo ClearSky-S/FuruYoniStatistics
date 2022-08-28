@@ -29,7 +29,7 @@
                     <tbody>
                     {% for dual in dual_list %}
                         <tr>
-                        <td>1</td>
+                        <td>{{ forloop.counter }}</td>
                         <td>{{ dual.time|date:"m/d H:m:s"}} </td>
                         <td>{{ dual.winner_name }}</td>
                         <td>{{ dual.winner_god_1 }} <img src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
