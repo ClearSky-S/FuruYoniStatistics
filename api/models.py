@@ -4,6 +4,7 @@ from django.db import models
 class Dual(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     isRank = models.BooleanField()
+    isPublic = models.BooleanField(default=True)
 
     winner_name = models.CharField(max_length=50)
     winner_god_1 = models.CharField(max_length=20)

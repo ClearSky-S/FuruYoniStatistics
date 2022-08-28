@@ -121,6 +121,7 @@ def dual(request):
         dual_data.append({
             'id': dual_row.pk,
             'time': dual_row.time,
+            'isPublic': dual_row.isPublic,
 
             'winner_name': dual_row.winner_name,
             'winner_god_1': God.objects.get(god_code=dual_row.winner_god_1),

@@ -5,13 +5,16 @@
         <h2 class="display-6 border-pink pb-3 mt-5 ">대전 결과 제출</h2>
         <div class="row justify-content-center mt-5">
             <div class="col-lg-6">
-                <form action="/api/dual" method="post">
+                <form action="/api/test" method="post">
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="isRank" class="form-label">랭크</label>
                         <input type="text" class="form-control" name="isRank" id="isRank" value="True">
                     </div>
-
+                    <div class="mb-3">
+                        <label for="isPublic" class="form-label">공개</label>
+                        <input type="text" class="form-control" name="isPublic" id="isPublic" value="True">
+                    </div>
                     <br/><br/>
                     <div class="mb-3">
                         <label for="winner_name" class="form-label">승자</label>
@@ -40,40 +43,40 @@
                     </div>
                     <div class="mb-3">
                         <label for="winner_normal_card_2" class="form-label">카드 2</label>
-                        <input type="text" class="form-control" name="winner_normal_card_2" id="winner_normal_card_2" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_normal_card_2" id="winner_normal_card_2" value="01-O-N-2">
                     </div>
                     <div class="mb-3">
                         <label for="winner_normal_card_3" class="form-label">카드 3</label>
-                        <input type="text" class="form-control" name="winner_normal_card_3" id="winner_normal_card_3" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_normal_card_3" id="winner_normal_card_3" value="01-O-N-3">
                     </div>
                     <div class="mb-3">
                         <label for="winner_normal_card_4" class="form-label">카드 4</label>
-                        <input type="text" class="form-control" name="winner_normal_card_4" id="winner_normal_card_4" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_normal_card_4" id="winner_normal_card_4" value="01-O-N-4">
                     </div>
                     <div class="mb-3">
                         <label for="winner_normal_card_5" class="form-label">카드 5</label>
-                        <input type="text" class="form-control" name="winner_normal_card_5" id="winner_normal_card_5" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_normal_card_5" id="winner_normal_card_5" value="01-O-N-5">
                     </div>
                     <div class="mb-3">
                         <label for="winner_normal_card_6" class="form-label">카드 6</label>
-                        <input type="text" class="form-control" name="winner_normal_card_6" id="winner_normal_card_6" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_normal_card_6" id="winner_normal_card_6" value="01-O-N-6">
                     </div>
                     <div class="mb-3">
                         <label for="winner_normal_card_7" class="form-label">카드 7</label>
-                        <input type="text" class="form-control" name="winner_normal_card_7" id="winner_normal_card_7" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_normal_card_7" id="winner_normal_card_7" value="01-O-N-7">
                     </div>
 
                     <div class="mb-3">
                         <label for="winner_special_card_1" class="form-label">비장패 1</label>
-                        <input type="text" class="form-control" name="winner_special_card_1" id="winner_special_card_1" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_special_card_1" id="winner_special_card_1" value="01-O-S-1">
                     </div>
                     <div class="mb-3">
                         <label for="winner_special_card_2" class="form-label">비장패 2</label>
-                        <input type="text" class="form-control" name="winner_special_card_2" id="winner_special_card_2" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_special_card_2" id="winner_special_card_2" value="01-O-S-2">
                     </div>
                     <div class="mb-3">
                         <label for="winner_special_card_3" class="form-label">비장패 3</label>
-                        <input type="text" class="form-control" name="winner_special_card_3" id="winner_special_card_3" value="01-O-N-1">
+                        <input type="text" class="form-control" name="winner_special_card_3" id="winner_special_card_3" value="01-O-S-3">
                     </div>
                     <br/><br/>
 
@@ -104,40 +107,40 @@
                     </div>
                     <div class="mb-3">
                         <label for="loser_normal_card_2" class="form-label">카드 2</label>
-                        <input type="text" class="form-control" name="loser_normal_card_2" id="loser_normal_card_2" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_normal_card_2" id="loser_normal_card_2" value="01-O-N-2">
                     </div>
                     <div class="mb-3">
                         <label for="loser_normal_card_3" class="form-label">카드 3</label>
-                        <input type="text" class="form-control" name="loser_normal_card_3" id="loser_normal_card_3" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_normal_card_3" id="loser_normal_card_3" value="01-O-N-3">
                     </div>
                     <div class="mb-3">
                         <label for="loser_normal_card_4" class="form-label">카드 4</label>
-                        <input type="text" class="form-control" name="loser_normal_card_4" id="loser_normal_card_4" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_normal_card_4" id="loser_normal_card_4" value="01-O-N-4">
                     </div>
                     <div class="mb-3">
                         <label for="loser_normal_card_5" class="form-label">카드 5</label>
-                        <input type="text" class="form-control" name="loser_normal_card_5" id="loser_normal_card_5" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_normal_card_5" id="loser_normal_card_5" value="01-O-N-5">
                     </div>
                     <div class="mb-3">
                         <label for="loser_normal_card_6" class="form-label">카드 6</label>
-                        <input type="text" class="form-control" name="loser_normal_card_6" id="loser_normal_card_6" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_normal_card_6" id="loser_normal_card_6" value="01-O-N-6">
                     </div>
                     <div class="mb-3">
                         <label for="loser_normal_card_7" class="form-label">카드 7</label>
-                        <input type="text" class="form-control" name="loser_normal_card_7" id="loser_normal_card_7" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_normal_card_7" id="loser_normal_card_7" value="01-O-N-7">
                     </div>
 
                     <div class="mb-3">
                         <label for="loser_special_card_1" class="form-label">비장패 1</label>
-                        <input type="text" class="form-control" name="loser_special_card_1" id="loser_special_card_1" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_special_card_1" id="loser_special_card_1" value="01-O-S-1">
                     </div>
                     <div class="mb-3">
                         <label for="loser_special_card_2" class="form-label">비장패 2</label>
-                        <input type="text" class="form-control" name="loser_special_card_2" id="loser_special_card_2" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_special_card_2" id="loser_special_card_2" value="01-O-S-2">
                     </div>
                     <div class="mb-3">
                         <label for="loser_special_card_3" class="form-label">비장패 3</label>
-                        <input type="text" class="form-control" name="loser_special_card_3" id="loser_special_card_3" value="01-O-N-1">
+                        <input type="text" class="form-control" name="loser_special_card_3" id="loser_special_card_3" value="01-O-S-3">
                     </div>
 
                     <button type="submit" class="btn btn-pink" id="btn-send">Send</button>

@@ -39,7 +39,11 @@
                         <td>{{ dual.loser_god_1 }} <img class="god3" src="{% static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
                         <td>{{ dual.loser_god_2 }} <img class="god4" src="{% static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
                         <td>{{ dual.loser_god_ban }}</td>
-                        <td class="pt-1 pb-0"><a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a></td>
+                        <td class="pt-1 pb-0">
+                            {% if dual.isPublic %}
+                            <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
+                            {% endif %}
+                        </td>
                     </tr>
                     {% endfor %}
 

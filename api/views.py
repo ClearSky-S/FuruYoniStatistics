@@ -23,7 +23,10 @@ def tabletop(request):
     if request.method == 'POST':
         # print(request.POST)
         dual_model = Dual()
-
+        if request.POST.get('isPublic') == None:
+            dual_model.isPublic = True
+        else:
+            dual_model.isPublic = request.POST.get('isPublic')
         dual_model.time = timezone.now()
         dual_model.isRank = request.POST.get('isRank')
 
@@ -185,3 +188,6 @@ def tabletop(request):
         return HttpResponse(json.dumps(request.POST), content_type="application/json")
     else:
         return HttpResponse("404")
+
+def test(request):
+    print(request.POST.get("aa"))
