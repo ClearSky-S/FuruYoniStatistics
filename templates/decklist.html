@@ -10,29 +10,24 @@
                 <div class="row align-items-center g-3 mb-3">
                     <div class="col-auto">
                         <label for="winner-deck-code" class="form-label mb-0">덱코드</label>
-                        </div>
+                    </div>
                     <div class="col-auto">
-                        <input readonly type="text" class="form-control" id="winner-deck-code" value="{{ winner_deck_code }}">
+                        <input readonly type="text" class="form-control" id="winner-deck-code"
+                               value="{{ winner_deck_code }}">
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-pink" id="winner-copy">복사</button>
                     </div>
                     <script>
-                        function copy_winner(){
-                            var textarea;
-                            if (!navigator.clipboard) {
-                                // Clipboard API not available
-                                console.log("Clipboard API not available")
-                                const textarea = document.getElementById("winner-deck-code");
-                                textarea.select();
-                                textarea.setSelectionRange(0, 9999);  // 추가
+                        function copy_winner() {
+                            const textarea = document.getElementById("winner-deck-code");
+                            textarea.select();
+                            textarea.setSelectionRange(0, 9999);  // 추가
 
-                                document.execCommand('copy');
-                                return
-                            }
-                            console.log("Clipboard API available")
-                            navigator.clipboard.writeText(document.getElementById("winner-deck-code").value);
+                            document.execCommand('copy');
+                            return
                         }
+
                         document.getElementById("winner-copy").addEventListener("click", copy_winner)
                     </script>
                 </div>
@@ -48,7 +43,8 @@
                             <tbody>
                             {% for card in winner_deck_list %}
                                 <tr>
-                                    <td>{{ card.name }}<img src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
+                                    <td>{{ card.name }}<img
+                                            src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
 
@@ -57,7 +53,8 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god1_code }}.png" class="card-img-top"
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god1_code }}.png"
+                                 class="card-img-top"
                                  alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ winner_god1 }}</h5>
@@ -66,7 +63,8 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god2_code }}.png" class="card-img-top" alt="...">
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god2_code }}.png"
+                                 class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ winner_god2 }}</h5>
                             </div>
@@ -79,29 +77,25 @@
                 <div class="row align-items-center g-3 mb-3">
                     <div class="col-auto">
                         <label for="loser-deck-code" class="form-label mb-0">덱코드</label>
-                        </div>
+                    </div>
                     <div class="col-auto">
-                        <input readonly type="text" class="form-control" id="loser-deck-code" value="{{ loser_deck_code }}">
+                        <input readonly type="text" class="form-control" id="loser-deck-code"
+                               value="{{ loser_deck_code }}">
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-pink" id="loser-copy">복사</button>
                     </div>
                     <script>
-                        function copy_loser(){
-                            if (!navigator.clipboard) {
-                                // Clipboard API not available
-                                console.log("Clipboard API not available")
-                                const textarea = document.getElementById("loser-deck-code");
-                                textarea.select();
-                                textarea.setSelectionRange(0, 9999);  // 추가
+                        function copy_loser() {
+                            const textarea = document.getElementById("loser-deck-code");
+                            textarea.select();
+                            textarea.setSelectionRange(0, 9999);  // 추가
 
-                                document.execCommand('copy');
-                                return
-                            }
-                            console.log("Clipboard API available")
+                            document.execCommand('copy');
+                            return
 
-                            navigator.clipboard.writeText(document.getElementById("loser-deck-code").value);
                         }
+
                         document.getElementById("loser-copy").addEventListener("click", copy_loser)
                     </script>
                 </div>
@@ -117,7 +111,8 @@
                             <tbody>
                             {% for card in loser_deck_list %}
                                 <tr>
-                                    <td>{{ card.name }}<img src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
+                                    <td>{{ card.name }}<img
+                                            src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
 
@@ -126,7 +121,8 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god1_code }}.png" class="card-img-top"
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god1_code }}.png"
+                                 class="card-img-top"
                                  alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ loser_god1 }}</h5>
@@ -135,7 +131,8 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god2_code }}.png" class="card-img-top" alt="...">
+                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god2_code }}.png"
+                                 class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ loser_god2 }}</h5>
                             </div>
