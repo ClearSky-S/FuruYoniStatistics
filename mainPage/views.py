@@ -38,7 +38,7 @@ def card_god_select(request):
 
 
 def card(request, god_code):
-    god_code = God.objects.get(god_code=god_code)
+    god_code = God.objects.get(god_code=god_code.upper())
     card_list = Card.objects.filter(god=god_code)
     context = {
         "god": god_code,
@@ -54,9 +54,9 @@ def partner_god_select(request):
 
 def partner(request, god_code, sort_by="pick"):
     if sort_by == "win":
-        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-win_ratio")
+        partner_list = Partner.objects.filter(gods__god_code=god_code.upper()).order_by("-win_ratio")
     else:
-        partner_list = Partner.objects.filter(gods__god_code=god_code).order_by("-pick_ratio")
+        partner_list = Partner.objects.filter(gods__god_code=god_code.upper()).order_by("-pick_ratio")
     god_list = []
     for partner in partner_list:
         partner_god = partner.gods.all()[0] if partner.gods.all()[0].god_code != god_code else partner.gods.all()[1]
@@ -67,7 +67,7 @@ def partner(request, god_code, sort_by="pick"):
 
         })
     context = {
-        "god": God.objects.get(god_code=god_code),
+        "god": God.objects.get(god_code=god_code.upper()),
         "god_list": god_list,
     }
     partner_list = Partner.objects.filter(gods__god_code=god_code).order_by('-pick_ratio')
@@ -82,13 +82,16 @@ def trio_god_select_1(request):
 
 def trio_god_select_2(request,  god_code_1):
     context = {
-        "god_list": God.objects.exclude(god_code__contains=god_code_1[:2]),
-        "god1": God.objects.get(god_code= god_code_1)
+        "god_list": God.objects.exclude(god_code__contains=god_code_1.upper()[:2]),
+        "god1": God.objects.get(god_code= god_code_1.upper())
     }
     return render(request, 'trio_god_select_2.html', context)
 
 
 def trio(request, god_code_1, god_code_2, sort_by):
+    god_code_1 = god_code_1.upper()
+    god_code_2 = god_code_2.upper()
+
     god1 = God.objects.get(god_code=god_code_1)
     god2 = God.objects.get(god_code=god_code_2)
     god_list = God.objects.exclude(god_code__contains=god_code_1[:2]).exclude(god_code__contains=god_code_2[:2])
