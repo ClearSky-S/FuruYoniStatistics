@@ -19,24 +19,24 @@
                         <th>여신1</th>
                         <th>여신2</th>
                         <th>밴</th>
-                        <th>덱</th>
+                        <th class="px-0">덱</th>
                         <th>패자</th>
                         <th>여신1</th>
                         <th>여신2</th>
                         <th>밴</th>
-                        <th>덱</th>
+                        <th class="px-0">덱</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for dual in dual_list %}
                         <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ dual.time|date:"m/d H:m:s"}} </td>
+                        <td>{{ dual.time|date:"m/d H:m"}} </td>
                         <td>{{ dual.winner_name }}</td>
                         <td>{{ dual.winner_god_1 }} <img src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
                         <td>{{ dual.winner_god_2 }} <img class="god2" src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/></td>
                         <td>{{ dual.winner_god_ban }}</td>
-                        <td class="pt-1 pb-0">
+                        <td class="pt-1 pb-0 px-0">
                             {% if dual.winner_isPublic %}
                             <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
                             {% endif %}
@@ -45,7 +45,7 @@
                         <td>{{ dual.loser_god_1 }} <img class="god3" src="{% static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
                         <td>{{ dual.loser_god_2 }} <img class="god4" src="{% static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
                         <td>{{ dual.loser_god_ban }}</td>
-                        <td class="pt-1 pb-0">
+                        <td class="pt-1 pb-0 px-0">
                             {% if dual.loser_isPublic %}
                             <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
                             {% endif %}
