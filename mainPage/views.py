@@ -124,7 +124,8 @@ def dual(request):
         dual_data.append({
             'id': dual_row.pk,
             'time': dual_row.time,
-            'isPublic': dual_row.isPublic,
+            'winner_isPublic': dual_row.winner_isPublic,
+            'loser_isPublic': dual_row.loser_isPublic,
 
             'winner_name': dual_row.winner_name,
             'winner_god_1': God.objects.get(god_code=dual_row.winner_god_1),
@@ -194,6 +195,7 @@ def decklist(request, dual_id):
     }, loser_deck_list)
 
     context = {
+        "dual": dual_model,
         "winner_god1": God.objects.get(god_code=dual_model.winner_god_1),
         "winner_god2": God.objects.get(god_code=dual_model.winner_god_2),
         "winner_god1_code": dual_model.winner_god_1,

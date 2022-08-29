@@ -23,10 +23,14 @@ def tabletop(request):
     if request.method == 'POST':
         # print(request.POST)
         dual_model = Dual()
-        if request.POST.get('isPublic') == None:
-            dual_model.isPublic = True
+        if request.POST.get('winner_isPublic') == None:
+            dual_model.winner_isPublic = True
         else:
-            dual_model.isPublic = request.POST.get('isPublic')
+            dual_model.winner_isPublic = request.POST.get('winner_isPublic')
+        if request.POST.get('loser_isPublic') == None:
+            dual_model.loser_isPublic = True
+        else:
+            dual_model.loser_isPublic = request.POST.get('loser_isPublic')
         dual_model.time = timezone.now()
         dual_model.isRank = request.POST.get('isRank')
 

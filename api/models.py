@@ -4,13 +4,14 @@ from django.db import models
 class Dual(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     isRank = models.BooleanField()
-    isPublic = models.BooleanField(default=True)
 
     winner_name = models.CharField(max_length=50)
     winner_god_1 = models.CharField(max_length=20)
     winner_god_2 = models.CharField(max_length=20)
     winner_god_ban = models.CharField(max_length=20)
     winner_deck_code = models.CharField(max_length=30)
+    winner_isPublic = models.BooleanField(default=True)
+
 
     winner_normal_card_1 = models.CharField(max_length=20)
     winner_normal_card_2 = models.CharField(max_length=20)
@@ -29,6 +30,7 @@ class Dual(models.Model):
     loser_god_2 = models.CharField(max_length=20)
     loser_god_ban = models.CharField(max_length=20)
     loser_deck_code = models.CharField(max_length=30)
+    loser_isPublic = models.BooleanField(default=True)
 
     loser_normal_card_1 = models.CharField(max_length=20)
     loser_normal_card_2 = models.CharField(max_length=20)

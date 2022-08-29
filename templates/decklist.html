@@ -6,14 +6,17 @@
         <h2 class="display-6 border-pink pb-3 mt-5 ">덱리스트</h2>
         <div class="row">
             <div class="col-lg-6 mb-4">
-                <h5 class="display-8 border-bottom border-success pb-3 mt-2">승자</h5>
+                <h5 class="display-8 border-bottom border-success pb-3 mt-2">승자 {% if not dual.winner_isPublic %}(비공개){% endif %}</h5>
                 <div class="row align-items-center g-3 mb-3">
                     <div class="col-auto">
                         <label for="winner-deck-code" class="form-label mb-0">덱코드</label>
                     </div>
                     <div class="col-auto">
                         <input readonly type="text" class="form-control" id="winner-deck-code"
-                               value="{{ winner_deck_code }}">
+                               {% if dual.winner_isPublic %}
+                               value="{{ winner_deck_code }}"
+                               {%  endif %}
+                        >
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-pink" id="winner-copy">복사</button>
@@ -41,12 +44,14 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {% if dual.winner_isPublic %}
                             {% for card in winner_deck_list %}
                                 <tr>
                                     <td>{{ card.name }}<img
                                             src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
+                            {% endif %}
 
                             </tbody>
                         </table>
@@ -73,14 +78,17 @@
                 </div>
             </div>
             <div class="col-lg-6 mb-4">
-                <h5 class="display-8 border-bottom border-danger pb-3 mt-2">패자</h5>
+                <h5 class="display-8 border-bottom border-danger pb-3 mt-2">패자 {% if not dual.loser_isPublic %}(비공개){% endif %}</h5>
                 <div class="row align-items-center g-3 mb-3">
                     <div class="col-auto">
                         <label for="loser-deck-code" class="form-label mb-0">덱코드</label>
                     </div>
                     <div class="col-auto">
                         <input readonly type="text" class="form-control" id="loser-deck-code"
-                               value="{{ loser_deck_code }}">
+                               {% if dual.loser_isPublic %}
+                               value="{{ loser_deck_code }}"
+                               {% endif %}
+                        >
                     </div>
                     <div class="col-auto">
                         <button class="btn btn-pink" id="loser-copy">복사</button>
@@ -109,13 +117,14 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {% if dual.loser_isPublic %}
                             {% for card in loser_deck_list %}
                                 <tr>
                                     <td>{{ card.name }}<img
                                             src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
-
+                            {% endif %}
                             </tbody>
                         </table>
                     </div>
