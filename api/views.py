@@ -40,17 +40,17 @@ def tabletop(request):
         dual_model.winner_god_ban = request.POST.get('winner_god_ban')
         dual_model.winner_deck_code = request.POST.get('winner_deck_code')
 
-        dual_model.winner_normal_card_1 = request.POST.get('winner_normal_card_1')
-        dual_model.winner_normal_card_2 = request.POST.get('winner_normal_card_2')
-        dual_model.winner_normal_card_3 = request.POST.get('winner_normal_card_3')
-        dual_model.winner_normal_card_4 = request.POST.get('winner_normal_card_4')
-        dual_model.winner_normal_card_5 = request.POST.get('winner_normal_card_5')
-        dual_model.winner_normal_card_6 = request.POST.get('winner_normal_card_6')
-        dual_model.winner_normal_card_7 = request.POST.get('winner_normal_card_7')
+        dual_model.winner_normal_card_1 = request.POST.get('winner_normal_card_1').upper()
+        dual_model.winner_normal_card_2 = request.POST.get('winner_normal_card_2').upper()
+        dual_model.winner_normal_card_3 = request.POST.get('winner_normal_card_3').upper()
+        dual_model.winner_normal_card_4 = request.POST.get('winner_normal_card_4').upper()
+        dual_model.winner_normal_card_5 = request.POST.get('winner_normal_card_5').upper()
+        dual_model.winner_normal_card_6 = request.POST.get('winner_normal_card_6').upper()
+        dual_model.winner_normal_card_7 = request.POST.get('winner_normal_card_7').upper()
 
-        dual_model.winner_special_card_1 = request.POST.get('winner_special_card_1')
-        dual_model.winner_special_card_2 = request.POST.get('winner_special_card_2')
-        dual_model.winner_special_card_3 = request.POST.get('winner_special_card_3')
+        dual_model.winner_special_card_1 = request.POST.get('winner_special_card_1').upper()
+        dual_model.winner_special_card_2 = request.POST.get('winner_special_card_2').upper()
+        dual_model.winner_special_card_3 = request.POST.get('winner_special_card_3').upper()
 
         dual_model.loser_name = request.POST.get('loser_name')
         dual_model.loser_god_1 = request.POST.get('loser_god_1')
@@ -58,17 +58,17 @@ def tabletop(request):
         dual_model.loser_god_ban = request.POST.get('loser_god_ban')
         dual_model.loser_deck_code = request.POST.get('loser_deck_code')
 
-        dual_model.loser_normal_card_1 = request.POST.get('loser_normal_card_1')
-        dual_model.loser_normal_card_2 = request.POST.get('loser_normal_card_2')
-        dual_model.loser_normal_card_3 = request.POST.get('loser_normal_card_3')
-        dual_model.loser_normal_card_4 = request.POST.get('loser_normal_card_4')
-        dual_model.loser_normal_card_5 = request.POST.get('loser_normal_card_5')
-        dual_model.loser_normal_card_6 = request.POST.get('loser_normal_card_6')
-        dual_model.loser_normal_card_7 = request.POST.get('loser_normal_card_7')
+        dual_model.loser_normal_card_1 = request.POST.get('loser_normal_card_1').upper()
+        dual_model.loser_normal_card_2 = request.POST.get('loser_normal_card_2').upper()
+        dual_model.loser_normal_card_3 = request.POST.get('loser_normal_card_3').upper()
+        dual_model.loser_normal_card_4 = request.POST.get('loser_normal_card_4').upper()
+        dual_model.loser_normal_card_5 = request.POST.get('loser_normal_card_5').upper()
+        dual_model.loser_normal_card_6 = request.POST.get('loser_normal_card_6').upper()
+        dual_model.loser_normal_card_7 = request.POST.get('loser_normal_card_7').upper()
 
-        dual_model.loser_special_card_1 = request.POST.get('loser_special_card_1')
-        dual_model.loser_special_card_2 = request.POST.get('loser_special_card_2')
-        dual_model.loser_special_card_3 = request.POST.get('loser_special_card_3')
+        dual_model.loser_special_card_1 = request.POST.get('loser_special_card_1').upper()
+        dual_model.loser_special_card_2 = request.POST.get('loser_special_card_2').upper()
+        dual_model.loser_special_card_3 = request.POST.get('loser_special_card_3').upper()
 
         dual_model.save()
 
@@ -142,7 +142,7 @@ def tabletop(request):
         for card in winner_card_list:
             god1, god2 = dual_model.winner_god_1, dual_model.winner_god_2
             god = god1 if card[:2] == god1[:2] else god2
-            card = Card.objects.get(card_code=card, god_code=god)
+            card = Card.objects.get(card_code=card.upper(), god_code=god)
             card.win_count += 1
             card.pick_count += 1
             card.save()
@@ -150,7 +150,7 @@ def tabletop(request):
         for card in loser_card_list:
             god1, god2 = dual_model.loser_god_1, dual_model.loser_god_2
             god = god1 if card[:2] == god1[:2] else god2
-            card = Card.objects.get(card_code=card, god_code=god)
+            card = Card.objects.get(card_code=card.upper(), god_code=god)
             card.pick_count += 1
             card.save()
 
