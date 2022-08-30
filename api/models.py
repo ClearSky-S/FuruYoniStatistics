@@ -45,7 +45,7 @@ class Dual(models.Model):
     loser_special_card_3 = models.CharField(max_length=20)
 
     def __str__(self):
-        return "대전기록" + str(self.time)
+        return "대전기록 : " + str(self.winner_name) +" " + str(self.time)
 
 
 class TotalGame(models.Model):
