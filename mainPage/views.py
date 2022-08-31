@@ -117,7 +117,7 @@ def trio(request, god_code_1, god_code_2, sort_by):
 
 
 def dual(request):
-    dual_list = Dual.objects.order_by('-time')[:50]
+    dual_list = Dual.objects.order_by('-time')[:500]
     dual_data = []
 
     for dual_row in dual_list:
