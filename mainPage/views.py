@@ -120,9 +120,12 @@ def trio(request, god_code_1, god_code_2, sort_by):
 def dual(request):
     page = request.GET.get('page', '1')
     dual_list = Dual.objects.order_by('-time')
+    paginator = Paginator(dual_list, 50)
+    paginator = paginator.get_page(page)
+
     dual_data = []
 
-    for dual_row in dual_list:
+    for dual_row in paginator:
         dual_data.append({
             'id': dual_row.pk,
             'time': dual_row.time,
@@ -149,10 +152,9 @@ def dual(request):
             'loser_god_1_code': dual_row.loser_god_1,
             'loser_god_2_code': dual_row.loser_god_2,
         })
-    paginator = Paginator(dual_data, 50)
-    dual_data = paginator.get_page(page)
     context = {
-        'dual_list': dual_data
+        'dual_list': dual_data,
+        'paginator': paginator,
     }
     return render(request, 'dual.html', context)
 

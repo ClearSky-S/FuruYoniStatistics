@@ -80,9 +80,9 @@
             <!-- 페이징처리 시작 -->
             <ul class="pagination" style="display: block; text-align:center; white-space: nowrap; overflow: auto">
                 <!-- 이전페이지 -->
-                {% if dual_list.has_previous %}
+                {% if paginator.has_previous %}
                     <li class="page-item" style="display: inline-block; ">
-                        <a class="page-link" href="?page={{ dual_list.previous_page_number }}">이전</a>
+                        <a class="page-link" href="?page={{ paginator.previous_page_number }}">이전</a>
                     </li>
                 {% else %}
                     <li class="page-item disabled" style="display: inline-block;">
@@ -90,9 +90,9 @@
                     </li>
                 {% endif %}
                 <!-- 페이지리스트 -->
-                {% for page_number in dual_list.paginator.page_range %}
-                    {% if page_number >= dual_list.number|add:-5 and page_number <= dual_list.number|add:5 %}
-                    {% if page_number == dual_list.number %}
+                {% for page_number in paginator.paginator.page_range %}
+                    {% if page_number >= paginator.number|add:-5 and page_number <= paginator.number|add:5 %}
+                    {% if page_number == paginator.number %}
                         <li class="page-item active" aria-current="page" style="display: inline-block;">
                             <a class="page-link" href="?page={{ page_number }}" style="background-color: #f68699 !important; border-color: pink">{{ page_number }}</a>
                         </li>
@@ -104,9 +104,9 @@
                     {% endif %}
                 {% endfor %}
                 <!-- 다음페이지 -->
-                {% if dual_list.has_next %}
+                {% if paginator.has_next %}
                     <li class="page-item" style="display: inline-block;">
-                        <a class="page-link" href="?page={{ dual_list.next_page_number }}">다음</a>
+                        <a class="page-link" href="?page={{ paginator.next_page_number }}">다음</a>
                     </li>
                 {% else %}
                     <li class="page-item disabled" style="display: inline-block;">
