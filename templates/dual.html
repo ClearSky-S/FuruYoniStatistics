@@ -8,7 +8,7 @@
         </div>
         <h2 class="display-6 border-pink pb-3 mt-5 ">대전 기록</h2>
 
-        <div class="row">
+        <div class="row" style="overflow: auto;">
             <div class="col-md-12 mb-4">
                 <table class="table table-striped-pink">
                     <thead>
@@ -30,47 +30,91 @@
                     <tbody>
                     {% for dual in dual_list %}
                         <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ dual.time|date:"m/d f"}} </td>
-                        <td>{{ dual.winner_name }}</td>
-                        <td>{{ dual.winner_god_1 }} <img src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
-                        <td>{{ dual.winner_god_2 }} <img class="god2" src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/></td>
-                        <td>{{ dual.winner_god_ban }}</td>
-                        <td class="pt-1 pb-0 px-0">
-                            {% if dual.winner_isPublic %}
-                            <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
-                            {% endif %}
-                        </td>
-                        <td>{{ dual.loser_name }}</td>
-                        <td>{{ dual.loser_god_1 }} <img class="god3" src="{% static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
-                        <td>{{ dual.loser_god_2 }} <img class="god4" src="{% static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
-                        <td>{{ dual.loser_god_ban }}</td>
-                        <td class="pt-1 pb-0 px-0">
-                            {% if dual.loser_isPublic %}
-                            <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
-                            {% endif %}
-                        </td>
-                    </tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ dual.time|date:"m/d f" }} </td>
+                            <td>{{ dual.winner_name }}</td>
+                            <td>{{ dual.winner_god_1 }} <img
+                                    src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
+                            <td>{{ dual.winner_god_2 }} <img class="god2" src="
+                                    {% static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/></td>
+                            <td>{{ dual.winner_god_ban }}</td>
+                            <td class="pt-1 pb-0 px-0">
+                                {% if dual.winner_isPublic %}
+                                    <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
+                                {% endif %}
+                            </td>
+                            <td>{{ dual.loser_name }}</td>
+                            <td>{{ dual.loser_god_1 }} <img class="god3" src="
+                                    {% static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
+                            <td>{{ dual.loser_god_2 }} <img class="god4" src="
+                                    {% static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
+                            <td>{{ dual.loser_god_ban }}</td>
+                            <td class="pt-1 pb-0 px-0">
+                                {% if dual.loser_isPublic %}
+                                    <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
+                                {% endif %}
+                            </td>
+                        </tr>
                     {% endfor %}
 
-{#                    <tr>#}
-{#                        <td>1</td>#}
-{#                        <td>01월 24일 11:03 </td>#}
-{#                        <td>사이네단</td>#}
-{#                        <td>사이네 <img src="{% static 'img/table/table_saine.png' %}"/></td>#}
-{#                        <td>히미카 <img class="god2" src="{% static 'img/table/table_saine.png' %}"/></td>#}
-{#                        <td>치카게</td>#}
-{#                        <td class="pt-1 pb-0"><a href="/dual/1/1" class="btn btn-pink py-0 px-2">보기</a></td>#}
-{#                        <td>유리나단</td>#}
-{#                        <td>유리나 <img class="god3" src="{% static 'img/table/table_saine.png' %}"/></td>#}
-{#                        <td>히미카 <img class="god4" src="{% static 'img/table/table_saine.png' %}"/></td>#}
-{#                        <td>치카게</td>#}
-{#                        <td class="pt-1 pb-0"><a href="/dual/1/1" class="btn btn-pink py-0 px-2">보기</a></td>#}
-{#                    </tr>#}
+                    {#                    <tr>#}
+                    {#                        <td>1</td>#}
+                    {#                        <td>01월 24일 11:03 </td>#}
+                    {#                        <td>사이네단</td>#}
+                    {#                        <td>사이네 <img src="{% static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>히미카 <img class="god2" src="{% static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>치카게</td>#}
+                    {#                        <td class="pt-1 pb-0"><a href="/dual/1/1" class="btn btn-pink py-0 px-2">보기</a></td>#}
+                    {#                        <td>유리나단</td>#}
+                    {#                        <td>유리나 <img class="god3" src="{% static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>히미카 <img class="god4" src="{% static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>치카게</td>#}
+                    {#                        <td class="pt-1 pb-0"><a href="/dual/1/1" class="btn btn-pink py-0 px-2">보기</a></td>#}
+                    {#                    </tr>#}
 
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div>
+            <!-- 페이징처리 시작 -->
+            <ul class="pagination" style="display: block; text-align:center; white-space: nowrap; overflow: auto">
+                <!-- 이전페이지 -->
+                {% if dual_list.has_previous %}
+                    <li class="page-item" style="display: inline-block; ">
+                        <a class="page-link" href="?page={{ dual_list.previous_page_number }}">이전</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled" style="display: inline-block;">
+                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+                    </li>
+                {% endif %}
+                <!-- 페이지리스트 -->
+                {% for page_number in dual_list.paginator.page_range %}
+                    {% if page_number >= dual_list.number|add:-5 and page_number <= dual_list.number|add:5 %}
+                    {% if page_number == dual_list.number %}
+                        <li class="page-item active" aria-current="page" style="display: inline-block;">
+                            <a class="page-link" href="?page={{ page_number }}" style="background-color: #f68699 !important; border-color: pink">{{ page_number }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item" style="display: inline-block;">
+                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                        </li>
+                    {% endif %}
+                    {% endif %}
+                {% endfor %}
+                <!-- 다음페이지 -->
+                {% if dual_list.has_next %}
+                    <li class="page-item" style="display: inline-block;">
+                        <a class="page-link" href="?page={{ dual_list.next_page_number }}">다음</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled" style="display: inline-block;">
+                        <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+                    </li>
+                {% endif %}
+            </ul>
+            <!-- 페이징처리 끝 -->
         </div>
     </div>
 {% endblock %}

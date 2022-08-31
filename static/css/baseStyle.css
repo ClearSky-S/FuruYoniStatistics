@@ -103,7 +103,9 @@ footer{
     /*height: 500px;*/
     color: #fff;
     background-color: #ffc0cd;
+    padding: 10px;
     padding-top: 30px;
+
     text-align: center;
 }
 
