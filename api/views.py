@@ -174,7 +174,6 @@ def tabletop(request):
         winner_partner.save()
 
         loser_partner = Partner.objects.filter(gods__god_code=dual_model.loser_god_1).filter(gods__god_code=dual_model.loser_god_2)[0]
-        loser_partner.win_count += 1
         loser_partner.pick_count += 1
         loser_partner.save()
 
