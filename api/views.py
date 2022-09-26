@@ -20,10 +20,21 @@ def dual_manual_post(request):
 
 @csrf_exempt
 def tabletop(request):
-    return HttpResponse("server updating")
     try:
         if request.method == 'POST':
             # print(request.POST)
+            try:
+                God.objects.get(god_code=request.POST.get('winner_god_1'))
+                God.objects.get(god_code=request.POST.get('winner_god_2'))
+                God.objects.get(god_code=request.POST.get('loser_god_1'))
+                God.objects.get(god_code=request.POST.get('loser_god_2'))
+                if request.POST.get('winner_god_ban') != "None":
+                    God.objects.get(god_code=request.POST.get('winner_god_ban'))
+                if request.POST.get('loser_god_ban') != "None":
+                    God.objects.get(god_code=request.POST.get('loser_god_ban'))
+            except Exception:
+                return HttpResponse('Wrong god code')
+
             dual_model = Dual()
             if request.POST.get('winner_isPublic') == None:
                 dual_model.winner_isPublic = True

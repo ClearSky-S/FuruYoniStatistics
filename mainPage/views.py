@@ -118,15 +118,27 @@ def trio(request, god_code_1, god_code_2, sort_by):
 
 
 def dual(request):
-    return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
+    # return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
     page = request.GET.get('page', '1')
     dual_list = Dual.objects.order_by('-time')
-    paginator = Paginator(dual_list, 50)
+    paginator = Paginator(dual_list, 20)
     paginator = paginator.get_page(page)
 
     dual_data = []
 
     for dual_row in paginator:
+        try:
+            God.objects.get(god_code=dual_row.winner_god_1)
+            God.objects.get(god_code=dual_row.winner_god_2)
+            God.objects.get(god_code=dual_row.loser_god_1)
+            God.objects.get(god_code=dual_row.loser_god_2)
+            if dual_row.winner_god_ban != "None":
+                God.objects.get(god_code=dual_row.winner_god_ban)
+            if dual_row.loser_god_ban != "None":
+                God.objects.get(god_code=dual_row.loser_god_ban)
+        except Exception:
+            continue
+
         dual_data.append({
             'id': dual_row.pk,
             'time': dual_row.time,
