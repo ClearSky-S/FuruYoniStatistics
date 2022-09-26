@@ -118,6 +118,7 @@ def trio(request, god_code_1, god_code_2, sort_by):
 
 
 def dual(request):
+    return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
     page = request.GET.get('page', '1')
     dual_list = Dual.objects.order_by('-time')
     paginator = Paginator(dual_list, 50)
