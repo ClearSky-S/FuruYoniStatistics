@@ -1,8 +1,8 @@
 
+from sys import prefix
 from urllib.parse import quote, urljoin
 
 from django import template
-from django.templatetags import PrefixNode
 from django.utils.encoding import iri_to_uri
 from django.utils.html import conditional_escape
 
@@ -23,9 +23,22 @@ class CDNStaticNode(template.Node):
             f"{self.__class__.__name__}(varname={self.varname!r}, path={self.path!r})"
         )
 
+    def url_prefix(self):
+        try:
+            from django.conf import settings
+        except ImportError:
+            return ""
+
+        prefix = getattr(settings, "CDN_STATIC_URL", "")
+        if prefix == "":
+            prefix = getattr(settings, "STATIC_URL", "")
+
+        return iri_to_uri(prefix)
+
     def url(self, context):
+        prefix = self.url_prefix()
         path = self.path.resolve(context)
-        return self.handle_simple(path) 
+        return urljoin(prefix, quote(path))
 
     def render(self, context):
         url = self.url(context)
@@ -35,14 +48,6 @@ class CDNStaticNode(template.Node):
             return url
         context[self.varname] = url
         return ""
-
-    @classmethod
-    def handle_simple(cls, path):
-        static_url =  PrefixNode.handle_simple("CDN_STATIC_URL")
-        if static_url == '':
-            static_url =  PrefixNode.handle_simple("STATIC_URL")
-
-        return urljoin(static_url, quote(path))
 
     @classmethod
     def handle_token(cls, parser, token):

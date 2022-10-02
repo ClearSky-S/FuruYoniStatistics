@@ -139,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 JSDELIVR_CDN_HASH = os.environ.get('JSDELIVR_CDN_HASH', '')
-if JSDELIVR_CDN_HASH == '':
+if JSDELIVR_CDN_HASH != '':
     CDN_STATIC_URL = 'https://cdn.jsdelivr.net/gh/ClearSky-S/FuruYoniStatistics@{}/static/'.format( JSDELIVR_CDN_HASH)
 
 STATIC_URL = 'static/'
