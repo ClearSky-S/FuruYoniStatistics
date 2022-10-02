@@ -140,7 +140,7 @@ USE_TZ = True
 
 JSDELIVR_CDN_HASH = os.environ.get('JSDELIVR_CDN_HASH', '')
 if JSDELIVR_CDN_HASH != '':
-    CDN_STATIC_URL = 'https://cdn.jsdelivr.net/gh/ClearSky-S/FuruYoniStatistics@{}/static/'.format( JSDELIVR_CDN_HASH)
+    CDN_STATIC_URL = 'https://cdn.jsdelivr.net/gh/ClearSky-S/FuruYoniStatistics@{}/static/'.format(JSDELIVR_CDN_HASH)
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
