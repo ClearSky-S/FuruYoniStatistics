@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os, json
 from django.core.exceptions import ImproperlyConfigured
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-d#@q+gj(d6lgk9+1b$a##a&^jh8+xyi(19@#2bpb0-4s-^a2ft'
 secret_file = os.path.join(BASE_DIR, 'secrets.json')  # secrets.json 파일 위치를 명시
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
@@ -37,6 +40,7 @@ def get_secret(setting):
         error_msg = "Set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
 
+print(os.environ.getdefault('JSDELIVR_CDN_HASH', ''))
 
 SECRET_KEY = get_secret("SECRET_KEY")
 
