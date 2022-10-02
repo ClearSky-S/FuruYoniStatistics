@@ -27,10 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 secret_file = os.path.join(BASE_DIR, 'secrets.json')  # secrets.json 파일 위치를 명시
 load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-
 with open(secret_file) as f:
     secrets = json.loads(f.read())
-
 
 def get_secret(setting):
     """비밀 변수를 가져오거나 명시적 예외를 반환한다."""
@@ -39,8 +37,6 @@ def get_secret(setting):
     except KeyError:
         error_msg = "Set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
-
-print(os.environ.getdefault('JSDELIVR_CDN_HASH', ''))
 
 SECRET_KEY = get_secret("SECRET_KEY")
 
@@ -141,6 +137,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+JSDELIVR_CDN_HASH = os.environ.get('JSDELIVR_CDN_HASH', '')
+if JSDELIVR_CDN_HASH == '':
+    CDN_STATIC_URL = 'https://cdn.jsdelivr.net/gh/ClearSky-S/FuruYoniStatistics@{}/static/'.format( JSDELIVR_CDN_HASH)
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
