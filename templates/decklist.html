@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+
 {% load static %}
+{% load cdn_static %}
+
 {% block content %}
 
     <div class="container">
@@ -47,8 +50,9 @@
                             {% if dual.winner_isPublic %}
                             {% for card in winner_deck_list %}
                                 <tr>
-                                    <td>{{ card.name }}<img
-                                            src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
+                                    <td>
+                                        {{ card.name }}
+                                        <img src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
                             {% endif %}
@@ -58,7 +62,7 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god1_code }}.png"
+                            <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ winner_god1_code }}.png"
                                  class="card-img-top"
                                  alt="...">
                             <div class="card-body text-center">
@@ -68,7 +72,7 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ winner_god2_code }}.png"
+                            <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ winner_god2_code }}.png"
                                  class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ winner_god2 }}</h5>
@@ -121,7 +125,7 @@
                             {% for card in loser_deck_list %}
                                 <tr>
                                     <td>{{ card.name }}<img
-                                            src="{% static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
+                                            src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
                                 </tr>
                             {% endfor %}
                             {% endif %}
@@ -130,7 +134,7 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god1_code }}.png"
+                            <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ loser_god1_code }}.png"
                                  class="card-img-top"
                                  alt="...">
                             <div class="card-body text-center">
@@ -140,7 +144,7 @@
                     </div>
                     <div class="col-4 mb-4">
                         <div class="card">
-                            <img src="{% static 'img/god/tarots/tarot_' %}{{ loser_god2_code }}.png"
+                            <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ loser_god2_code }}.png"
                                  class="card-img-top" alt="...">
                             <div class="card-body text-center">
                                 <h5 class="card-title">{{ loser_god2 }}</h5>

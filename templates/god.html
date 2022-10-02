@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+
 {% load static %}
+{% load cdn_static %}
+
 {% block content %}
 
     <div class="container">
         <div class="row">
-            <img id="banner" src="{% static 'img/home/top_visual.png' %}"/>
+            <img id="banner" src="{% cdn_static 'img/home/top_visual.png' %}"/>
         </div>
         <h2 class="display-6 border-pink pb-3 mt-5 ">여신 티어</h2>
 
@@ -26,7 +29,7 @@
                     {% for god in god_list %}
                         <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ god.god_name }} <img src="{% static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
+                        <td>{{ god.god_name }} <img src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
                         <td>{{ god.win_ratio }}%</td>
                         <td>{{ god.pick_ratio }}%</td>
                         <td>{{ god.ban_ratio }}%</td>
