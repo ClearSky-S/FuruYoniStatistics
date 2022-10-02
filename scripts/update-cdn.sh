@@ -2,5 +2,6 @@
 
 set -e
 
-export GIT_LATEST_SHA=$(git rev-parse --verify HEAD)
-echo $GIT_LATEST_SHA
+cat > .env << EOF
+JSDELIVR_CDN_HASH=$(git rev-parse --verify HEAD)
+EOF
