@@ -49,14 +49,16 @@ ALLOWED_HOSTS = ['127.0.0.1', '121.138.65.97', 'clearsky777.iptime.org', 'furugg
 # Application definition
 
 INSTALLED_APPS = [
-    'FuruYoniStatistics',
-    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'FuruYoniStatistics',
+    'api.apps.ApiConfig',
+    'common.apps.CommonConfig',
 ]
 
 MIDDLEWARE = [
