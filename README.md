@@ -17,11 +17,6 @@ $ pip install -r requirements.txt
 $ python manage.py runserver
 ```
 
-## Update CDN Hash
-```sh
-$ ./scripts/update-cdn.sh
-```
-
 ## DB Creation
 ```sh
 $ python manage.py migrate
@@ -32,6 +27,12 @@ $ python manage.py read_card
 
 $ python manage.py init_partner_data
 ```
+
+## Update CDN Hash
+```sh
+$ ./scripts/update-cdn.sh
+```
+
 
 ## 추후 구현될 기능
 - 시즌별 아카이브  
