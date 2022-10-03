@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
+
 {% load static %}
+{% load cdn_static %}
+
 {% block content %}
 
     <div class="container">
         <div class="row">
             <div id="home-banner">
-                <img id="banner" src="{% static 'img/home/top_visual_background.png' %}"/>
-                <img id="banner-yurina" src="{% static 'img/home/top_visual3.png' %}"/>
-
+                <img id="banner" src="{% cdn_static 'img/home/top_visual_background.png' %}"/>
+                <img id="banner-yurina" src="{% cdn_static 'img/home/top_visual3.png' %}"/>
             </div>
-
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-6 mb-4">
-
                 <h4 class=" border-pink pb-3 mt-4 ">여신 티어</h4>
                 <table class="table table-striped-pink">
                     <thead>
@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ god.god_name }} <img
-                                    src="{% static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
+                                    src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
                             <td>{{ god.win_ratio }}%</td>
                             <td>{{ god.pick_ratio }}%</td>
                             <td>{{ god.ban_ratio }}%</td>
@@ -60,7 +60,7 @@
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ card.card_name }} <img
-                                    src="{% static 'img/god/banner/banner_' %}{{ card.god.god_code }}.png"/></td>
+                                    src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god.god_code }}.png"/></td>
                             <td>{{ card.god.god_name }}</td>
                             <td>{{ card.win_ratio }}%</td>
                             <td>{{ card.pick_ratio }}%</td>

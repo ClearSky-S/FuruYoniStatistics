@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block content %}
 
+{% load static %}
+{% load cdn_static %}
+
+{% block content %}
     <div class="container">
         <h2 class="display-6 border-pink pb-3 mt-5 ">삼습일사 - [{{ god1.god_name }}] [{{ god2.god_name }}]</h2>
         <div class="row">
@@ -14,25 +16,23 @@
                         <th>여신</th>
                         <th><a href="/trio/{{ god1.god_code }}/{{ god2.god_code }}/win">평균 승률 &#9660;</a></th>
                         <th><a href="/trio/{{ god1.god_code }}/{{ god2.god_code }}/pick">평균 픽률 &#9660;</a></th>
-
                     </tr>
                     </thead>
                     <tbody>
-                    {% for trio in trio_list %}
-                    <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td>{{ trio.god.god_name }} <img src="{% static 'img/god/banner/banner_' %}{{ trio.god.god_code }}.png"/></td>
-                        <td>{{ trio.avg_win_ratio }}%</td>
-                        <td>{{ trio.avg_pick_ratio }}%</td>
-                    </tr>
-                    {% endfor %}
-
+                        {% for trio in trio_list %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ trio.god.god_name }} <img src="{% cdn_static 'img/god/banner/banner_' %}{{ trio.god.god_code }}.png"/></td>
+                            <td>{{ trio.avg_win_ratio }}%</td>
+                            <td>{{ trio.avg_pick_ratio }}%</td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
             <div class="col-md-2 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/god/tarots/tarot_' %}{{ god1.god_code }}.png" class="card-img-top" alt="...">
+                    <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ god1.god_code }}.png" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ god1.god_name }}</h5>
                         <p class="card-text"><b>{{ god1.god_keyword }} </b>- {{ god1.god_text }}</p>
@@ -41,14 +41,13 @@
             </div>
             <div class="col-md-2 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/god/tarots/tarot_' %}{{ god2.god_code }}.png" class="card-img-top" alt="...">
+                    <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ god2.god_code }}.png" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ god2.god_name }}</h5>
                         <p class="card-text"><b>{{ god2.god_keyword }} </b>- {{ god2.god_text }}</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 {% endblock %}

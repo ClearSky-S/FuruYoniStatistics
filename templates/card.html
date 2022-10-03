@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+
 {% load static %}
+{% load cdn_static %}
+
 {% block content %}
 
     <div class="container">
@@ -32,7 +35,7 @@
             </div>
             <div class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="{% static 'img/god/tarots/tarot_' %}{{ god.god_code }}.png" class="card-img-top" alt="...">
+                    <img src="{% cdn_static 'img/god/tarots/tarot_' %}{{ god.god_code }}.png" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ god.god_name }}</h5>
                         <p class="card-text"><b>{{ god.god_keyword }} </b>- {{ god.god_text }}</p>

@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+
 {% load static %}
+{% load cdn_static %}
+
 {% block content %}
 
     <div class="container">
         <div class="row">
-            <img id="banner" src="{% static 'img/home/top_visual.png' %}"/>
+            <img id="banner" src="{% cdn_static 'img/home/top_visual.png' %}"/>
         </div>
         <h2 class="display-6 border-pink pb-3 mt-5 ">대전 기록</h2>
 
@@ -34,9 +37,9 @@
                             <td>{{ dual.time|date:"m/d G:i" }} </td>
                             <td>{{ dual.winner_name }}</td>
                             <td>{{ dual.winner_god_1 }} <img
-                                    src="{% static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
+                                    src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
                             <td>{{ dual.winner_god_2 }} <img class="god2" src="
-                                    {% static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/></td>
+                                    {% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/></td>
                             <td>{{ dual.winner_god_ban }}</td>
                             <td class="pt-1 pb-0 px-0">
                                 {% if dual.winner_isPublic %}
@@ -45,9 +48,9 @@
                             </td>
                             <td>{{ dual.loser_name }}</td>
                             <td>{{ dual.loser_god_1 }} <img class="god3" src="
-                                    {% static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
+                                    {% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
                             <td>{{ dual.loser_god_2 }} <img class="god4" src="
-                                    {% static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
+                                    {% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
                             <td>{{ dual.loser_god_ban }}</td>
                             <td class="pt-1 pb-0 px-0">
                                 {% if dual.loser_isPublic %}
@@ -61,13 +64,13 @@
                     {#                        <td>1</td>#}
                     {#                        <td>01월 24일 11:03 </td>#}
                     {#                        <td>사이네단</td>#}
-                    {#                        <td>사이네 <img src="{% static 'img/table/table_saine.png' %}"/></td>#}
-                    {#                        <td>히미카 <img class="god2" src="{% static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>사이네 <img src="{% cdn_static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>히미카 <img class="god2" src="{% cdn_static 'img/table/table_saine.png' %}"/></td>#}
                     {#                        <td>치카게</td>#}
                     {#                        <td class="pt-1 pb-0"><a href="/dual/1/1" class="btn btn-pink py-0 px-2">보기</a></td>#}
                     {#                        <td>유리나단</td>#}
-                    {#                        <td>유리나 <img class="god3" src="{% static 'img/table/table_saine.png' %}"/></td>#}
-                    {#                        <td>히미카 <img class="god4" src="{% static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>유리나 <img class="god3" src="{% cdn_static 'img/table/table_saine.png' %}"/></td>#}
+                    {#                        <td>히미카 <img class="god4" src="{% cdn_static 'img/table/table_saine.png' %}"/></td>#}
                     {#                        <td>치카게</td>#}
                     {#                        <td class="pt-1 pb-0"><a href="/dual/1/1" class="btn btn-pink py-0 px-2">보기</a></td>#}
                     {#                    </tr>#}

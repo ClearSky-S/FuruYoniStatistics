@@ -8,5 +8,10 @@ https://furugg.pythonanywhere.com/
 - 시즌별 아카이브  
 - 대전기록 여신 선택  
 
+## Update CDN Hash
+```sh
+$ ./scripts/update-cdn.sh
+```
+
 ## 개발자
 - 쾌청 / junhyuckjang3@gmail.com
