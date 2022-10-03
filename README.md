@@ -1,4 +1,4 @@
-# FuruYoniStatistics
+# Furu GG
 https://furugg.pythonanywhere.com/  
 
 벚꽃 내리는 시대에 결투를(약칭, 후루요니)의 통계 사이트입니다.  
