@@ -2,6 +2,8 @@ from itertools import repeat
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.utils import http
+
 from api.models import Dual, God, Card, Partner
 from django.core.paginator import Paginator
 
@@ -230,3 +232,7 @@ def decklist(request, dual_id):
     }
 
     return render(request, 'decklist.html', context)
+
+def archive(request):
+    context = {}
+    return render(request, 'archive.html', context)

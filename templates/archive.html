@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load cdn_static %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <img id="banner" src="{% cdn_static 'img/home/top_visual.png' %}"/>
+        </div>
+        <h2 class="display-6 border-pink pb-3 mt-5 ">아카이브</h2>
+
+        <div class="row" style="overflow: auto;">
+            <div class="col-md-12 mb-4">
+                <table class="table table-striped-pink">
+                    <thead>
+                    <tr>
+
+                        <th>시즌</th>
+                        <th>여신</th>
+                        <th>카드</th>
+                        <th>대전기록</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7</td>
+                            <td><a href="{% static 'db/7/api_god.csv' %}" class="btn btn-pink py-0 px-2">여신</a></td>
+                            <td><a href="{% static 'db/7/api_card.csv' %}" class="btn btn-pink py-0 px-2">카드</a></td>
+                            <td><a href="{% static 'db/7/api_dual.csv' %}" class="btn btn-pink py-0 px-2">대전기록</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

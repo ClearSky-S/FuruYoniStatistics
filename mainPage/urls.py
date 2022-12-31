@@ -22,4 +22,5 @@ urlpatterns = [
     path('duel', views.dual),
     path('duel/<int:dual_id>', views.decklist),
 
+    path('archive', views.archive),
 ]
