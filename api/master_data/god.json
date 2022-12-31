@@ -666,5 +666,35 @@
       "win_count": "0",
       "win_ratio": "00.0"
     }
+  },
+    {
+    "model": "api.God",
+    "fields": {
+      "god_code": "23-O",
+      "god_name": "아키나",
+      "god_keyword": "시세",
+      "god_text": "시세 게이지를 가지며, 초기값은 2이다.\n상대의 라이프에 0 이상의 데미지를 준다: +1\n투자권을 통해 벛꽃결정을 이동시킨다: +1\n당신의 라이프에 0 이상의 데미지를 받는다: -1\n회수를 통해 벛꽃결정을 이동시킨다: -2",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+    {
+    "model": "api.God",
+    "fields": {
+      "god_code": "24-O",
+      "god_name": "시스이",
+      "god_keyword": "열상",
+      "god_text": "당신의 개시 페이즈의 시작에\n각 영역에 놓인 당신의 열상 토큰을\n원하는 순서대로 데미지화한다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
   }
 ]
