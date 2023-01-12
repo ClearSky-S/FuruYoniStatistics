@@ -18,6 +18,19 @@ def dual_manual_post(request):
     return render(request, 'api_post_dual_manual.html')
 
 
+def filterName(name):
+    if "야스" in name:
+        return "부적절한 이름"
+    if "섹스" in name:
+        return "부적절한 이름"
+    if "음란" in name:
+        return "부적절한 이름"
+    if "보빔" in name:
+        return "부적절한 이름"
+    if "sex" in name:
+        return "부적절한 이름"
+    return name
+
 @csrf_exempt
 def tabletop(request):
     try:
@@ -47,7 +60,7 @@ def tabletop(request):
             dual_model.time = timezone.now()
             dual_model.isRank = request.POST.get('isRank')
 
-            dual_model.winner_name = request.POST.get('winner_name')
+            dual_model.winner_name = filterName(request.POST.get('winner_name'))
             dual_model.winner_god_1 = request.POST.get('winner_god_1')
             dual_model.winner_god_2 = request.POST.get('winner_god_2')
             dual_model.winner_god_ban = request.POST.get('winner_god_ban')
@@ -65,7 +78,7 @@ def tabletop(request):
             dual_model.winner_special_card_2 = request.POST.get('winner_special_card_2').upper()
             dual_model.winner_special_card_3 = request.POST.get('winner_special_card_3').upper()
 
-            dual_model.loser_name = request.POST.get('loser_name')
+            dual_model.loser_name = filterName(request.POST.get('loser_name'))
             dual_model.loser_god_1 = request.POST.get('loser_god_1')
             dual_model.loser_god_2 = request.POST.get('loser_god_2')
             dual_model.loser_god_ban = request.POST.get('loser_god_ban')
