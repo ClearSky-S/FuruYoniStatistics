@@ -52,7 +52,10 @@
                                 <tr>
                                     <td>
                                         {{ card.name }}
-                                        <img src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
+                                        <div class="godRowImage">
+                                        <img src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/>
+                                        </div>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             {% endif %}
@@ -124,8 +127,12 @@
                             {% if dual.loser_isPublic %}
                             {% for card in loser_deck_list %}
                                 <tr>
-                                    <td>{{ card.name }}<img
-                                            src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/></td>
+                                    <td>
+                                        {{ card.name }}
+                                        <div class="godRowImage">
+                                        <img src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/>
+                                        </div>
+                                    </td>
                                 </tr>
                             {% endfor %}
                             {% endif %}

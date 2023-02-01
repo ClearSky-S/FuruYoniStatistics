@@ -29,7 +29,13 @@
                     {% for god in god_list %}
                         <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ god.god_name }} <img src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
+                        <td>
+                            {{ god.god_name }}
+                            <div class="godRowImage">
+                                <img src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/>
+                            </div>
+
+                        </td>
                         <td>{{ god.win_ratio }}%</td>
                         <td>{{ god.pick_ratio }}%</td>
                         <td>{{ god.ban_ratio }}%</td>

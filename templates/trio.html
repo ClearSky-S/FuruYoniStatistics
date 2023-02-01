@@ -22,7 +22,12 @@
                         {% for trio in trio_list %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ trio.god.god_name }} <img src="{% cdn_static 'img/god/banner/banner_' %}{{ trio.god.god_code }}.png"/></td>
+                            <td>
+                                {{ trio.god.god_name }}
+                                <div class="godRowImage">
+                                    <img src="{% cdn_static 'img/god/banner/banner_' %}{{ trio.god.god_code }}.png"/>
+                                </div>
+                            </td>
                             <td>{{ trio.avg_win_ratio }}%</td>
                             <td>{{ trio.avg_pick_ratio }}%</td>
                         </tr>

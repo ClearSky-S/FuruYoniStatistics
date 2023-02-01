@@ -1,3 +1,4 @@
+import re
 from itertools import repeat
 
 from django.shortcuts import render
@@ -121,8 +122,17 @@ def trio(request, god_code_1, god_code_2, sort_by):
 
 def dual(request):
     def formatPlayerName(name: str):
-        if len(name) > 10:
-            return name[0:10] + "..."
+        def isKorean(text):
+            hangul = re.compile('[\u3131-\u3163\uac00-\ud7a3]+')
+            result = hangul.findall(text)
+            return len(result)
+
+        if isKorean(name):
+            if len(name) > 8:
+                return name[0:8] + "..."
+        else:
+            if len(name) > 12:
+                return name[0:12] + "..."
         return name
 
     # return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
