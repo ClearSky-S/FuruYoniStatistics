@@ -61,8 +61,11 @@
                     {% for god in god_list %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ god.god_name }} <img
-                                    src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/></td>
+                            <td>{{ god.god_name }}
+                                <div class="godRowImage">
+                                        <img src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/>
+                                </div>
+                            </td>
                             <td>{{ god.win_ratio }}%</td>
                             <td>{{ god.pick_ratio }}%</td>
                             <td>{{ god.ban_ratio }}%</td>
@@ -89,8 +92,12 @@
                     {% for card in card_list %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ card.card_name }} <img
-                                    src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god.god_code }}.png"/></td>
+                            <td>
+                                {{ card.card_name }}
+                                <div class="godRowImage">
+                                    <img src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/>
+                                </div>
+                            </td>
                             <td>{{ card.god.god_name }}</td>
                             <td>{{ card.win_ratio }}%</td>
                             <td>{{ card.pick_ratio }}%</td>
