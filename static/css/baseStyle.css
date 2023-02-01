@@ -66,6 +66,10 @@ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/s
 .table tbody tr{
     position: relative;
 }
+.table tbody tr td{
+    position: relative;
+}
+
 .table tbody tr img{
     position: absolute;
     top:0;
