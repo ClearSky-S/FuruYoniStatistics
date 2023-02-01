@@ -38,7 +38,8 @@
                                 {{ forloop.counter }}
                             </td>
                             <td>{{ dual.time|date:"m/d G:i" }} </td>
-                            <td>{{ dual.winner_name }}
+                            <td style="position:relative">
+                                {{ dual.winner_name }}
                                 <div class="godRowImage">
                                 <img class="god1" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/>
                                 <img class="god2" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/>
@@ -52,7 +53,7 @@
                                     <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
                                 {% endif %}
                             </td>
-                            <td>
+                            <td style="position:relative">
                                 {{ dual.loser_name }}
                                 <div class="godRowImage">
                                 <img class="god3" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/>

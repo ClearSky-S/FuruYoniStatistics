@@ -61,7 +61,8 @@
                     {% for god in god_list %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ god.god_name }}
+                            <td style="position:relative">
+                                {{ god.god_name }}
                                 <div class="godRowImage">
                                         <img src="{% cdn_static 'img/god/banner/banner_' %}{{ god.god_code }}.png"/>
                                 </div>
@@ -92,7 +93,7 @@
                     {% for card in card_list %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>
+                            <td style="position:relative">
                                 {{ card.card_name }}
                                 <div class="godRowImage">
                                     <img src="{% cdn_static 'img/god/banner/banner_' %}{{ card.god_code }}.png"/>
