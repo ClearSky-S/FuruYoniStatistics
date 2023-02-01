@@ -121,8 +121,8 @@ def trio(request, god_code_1, god_code_2, sort_by):
 
 def dual(request):
     def formatPlayerName(name: str):
-        if len(name) > 16:
-            return name[0:16] + "..."
+        if len(name) > 10:
+            return name[0:10] + "..."
         return name
 
     # return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
