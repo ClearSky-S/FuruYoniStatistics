@@ -66,42 +66,27 @@ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/s
 .table tbody tr{
     position: relative;
 }
-.table tbody tr td{
-    position: relative;
-}
 
-.table tbody tr img{
+.godRowImage{
     position: absolute;
     top:0;
-    left: 0px;
+
+}
+.godRowImage img{
+    position: absolute;
+    top:0;
+    /*right: 0px;*/
     opacity: 0.2;
     pointer-events: none;
 }
-
-.table tbody tr img.god2{
-    position: absolute;
-    top:0;
-    left: 200px;
-    opacity: 0.2;
-    pointer-events: none;
+.godRowImage img.god2, .godRowImage img.god4{
+    left:200px;
 }
-.table tbody tr img.god3{
-    position: absolute;
-    top:0;
-    left: 800px;
-    opacity: 0.2;
-    pointer-events: none;
+@media (max-width: 1000px) {
+.godRowImage img.god3, .godRowImage img.god4{
+    display: none;
 }
-
-.table tbody tr img.god4{
-    position: absolute;
-    top:0;
-    left: 1000px;
-    opacity: 0.2;
-    pointer-events: none;
 }
-
-
 
 footer{
     /*height: 500px;*/

@@ -83,10 +83,10 @@ def trio_god_select_1(request):
     return render(request, 'trio_god_select_1.html', context)
 
 
-def trio_god_select_2(request,  god_code_1):
+def trio_god_select_2(request, god_code_1):
     context = {
         "god_list": God.objects.exclude(god_code__contains=god_code_1.upper()[:2]),
-        "god1": God.objects.get(god_code= god_code_1.upper())
+        "god1": God.objects.get(god_code=god_code_1.upper())
     }
     return render(request, 'trio_god_select_2.html', context)
 
@@ -104,8 +104,8 @@ def trio(request, god_code_1, god_code_2, sort_by):
         partner2 = Partner.objects.filter(gods__god_code=god_code_2).filter(gods=god)
         trio_list.append({
             "god": god,
-            "avg_win_ratio": (partner1[0].win_ratio+partner2[0].win_ratio)/2,
-            "avg_pick_ratio": (partner1[0].pick_ratio+partner2[0].pick_ratio)/2,
+            "avg_win_ratio": (partner1[0].win_ratio + partner2[0].win_ratio) / 2,
+            "avg_pick_ratio": (partner1[0].pick_ratio + partner2[0].pick_ratio) / 2,
         })
     if sort_by == "win":
         trio_list.sort(key=lambda x: x["avg_win_ratio"], reverse=True)
@@ -120,6 +120,11 @@ def trio(request, god_code_1, god_code_2, sort_by):
 
 
 def dual(request):
+    def formatPlayerName(name: str):
+        if len(name) > 16:
+            return name[0:16] + "..."
+        return name
+
     # return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
     page = request.GET.get('page', '1')
     dual_list = Dual.objects.order_by('-time')
@@ -147,7 +152,7 @@ def dual(request):
             'winner_isPublic': dual_row.winner_isPublic,
             'loser_isPublic': dual_row.loser_isPublic,
 
-            'winner_name': dual_row.winner_name,
+            'winner_name': formatPlayerName(dual_row.winner_name),
             'winner_god_1': God.objects.get(god_code=dual_row.winner_god_1),
             'winner_god_2': God.objects.get(god_code=dual_row.winner_god_2),
             'winner_god_ban':
@@ -157,7 +162,7 @@ def dual(request):
             'winner_god_1_code': dual_row.winner_god_1,
             'winner_god_2_code': dual_row.winner_god_2,
 
-            'loser_name': dual_row.loser_name,
+            'loser_name': formatPlayerName(dual_row.loser_name),
             'loser_god_1': God.objects.get(god_code=dual_row.loser_god_1),
             'loser_god_2': God.objects.get(god_code=dual_row.loser_god_2),
             'loser_god_ban':
@@ -195,7 +200,6 @@ def decklist(request, dual_id):
         else dual_model.winner_god_2
     }, winner_deck_list)
 
-
     loser_deck_list = [
         dual_model.loser_normal_card_1,
         dual_model.loser_normal_card_2,
@@ -232,6 +236,7 @@ def decklist(request, dual_id):
     }
 
     return render(request, 'decklist.html', context)
+
 
 def archive(request):
     context = {}

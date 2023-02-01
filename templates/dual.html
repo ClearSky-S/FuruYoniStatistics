@@ -33,24 +33,34 @@
                     <tbody>
                     {% for dual in dual_list %}
                         <tr>
-                            <td>{{ forloop.counter }}</td>
+
+                            <td>
+                                {{ forloop.counter }}
+                            </td>
                             <td>{{ dual.time|date:"m/d G:i" }} </td>
-                            <td>{{ dual.winner_name }}</td>
-                            <td>{{ dual.winner_god_1 }} <img
-                                    src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/></td>
-                            <td>{{ dual.winner_god_2 }} <img class="god2" src="
-                                    {% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/></td>
+                            <td>{{ dual.winner_name }}
+                                <div class="godRowImage">
+                                <img class="god1" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/>
+                                <img class="god2" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/>
+                                </div>
+                            </td>
+                            <td>{{ dual.winner_god_1 }} </td>
+                            <td>{{ dual.winner_god_2 }} </td>
                             <td>{{ dual.winner_god_ban }}</td>
                             <td class="pt-1 pb-0 px-0">
                                 {% if dual.winner_isPublic %}
                                     <a href="/duel/{{ dual.id }}" class="btn btn-pink py-0 px-2">보기</a>
                                 {% endif %}
                             </td>
-                            <td>{{ dual.loser_name }}</td>
-                            <td>{{ dual.loser_god_1 }} <img class="god3" src="
-                                    {% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/></td>
-                            <td>{{ dual.loser_god_2 }} <img class="god4" src="
-                                    {% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/></td>
+                            <td>
+                                {{ dual.loser_name }}
+                                <div class="godRowImage">
+                                <img class="god3" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/>
+                                <img class="god4" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/>
+                                </div>
+                            </td>
+                            <td>{{ dual.loser_god_1 }} </td>
+                            <td>{{ dual.loser_god_2 }} </td>
                             <td>{{ dual.loser_god_ban }}</td>
                             <td class="pt-1 pb-0 px-0">
                                 {% if dual.loser_isPublic %}
