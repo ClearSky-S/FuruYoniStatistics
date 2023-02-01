@@ -68,7 +68,7 @@ def partner(request, god_code, sort_by="pick"):
             "god_name": partner_god.god_name,
             "pick_ratio": partner.pick_ratio,
             "win_ratio": partner.win_ratio,
-
+            "god_code": partner_god.god_code
         })
     context = {
         "god": God.objects.get(god_code=god_code.upper()),
