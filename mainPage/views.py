@@ -1,13 +1,14 @@
 import re
 from itertools import repeat
 
+
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils import http
 
 from api.models import Dual, God, Card, Partner
 from django.core.paginator import Paginator
-
+from django.db.models import Q
 
 # Create your views here.
 
@@ -136,8 +137,21 @@ def dual(request):
         return name
 
     # return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
+    print(request.GET)
+    god = request.GET.get('god', '')
+    player = request.GET.get('player', '')
     page = request.GET.get('page', '1')
-    dual_list = Dual.objects.order_by('-time')
+    dual_list = Dual.objects.all()
+    if god:
+        try:
+            god_code = God.objects.get(god_name=god).god_code
+            dual_list = dual_list.filter(Q(winner_god_1=god_code)|Q(winner_god_2=god_code)|Q(loser_god_1=god_code) | Q(loser_god_2=god_code))
+        except:
+            dual_list = dual_list.filter(winner_god_1="none")
+    if player:
+        dual_list = dual_list.filter(Q(winner_name=player)|Q(loser_name=player))
+    # dual_list = Dual.objects.filter(Q(winner_name=player)|Q(loser_name=player)).order_by('-time')\
+
     paginator = Paginator(dual_list, 20)
     paginator = paginator.get_page(page)
 
@@ -185,6 +199,8 @@ def dual(request):
     context = {
         'dual_list': dual_data,
         'paginator': paginator,
+        'god':god,
+        'player':player,
     }
     return render(request, 'dual.html', context)
 

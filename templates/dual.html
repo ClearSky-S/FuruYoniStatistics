@@ -11,6 +11,32 @@
         </div>
         <h2 class="display-6 border-pink pb-3 mt-5 ">대전 기록</h2>
 
+
+        <div class="row align-items-center g-3 py-3">
+            <div class="col-auto">
+                <label class="col-form-label" for="inputGod">여신</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" id="inputGod" placeholder="여신 이름"
+                       value="{{ god|default_if_none:'' }}">
+            </div>
+            <div class="col-auto">
+                <label class="col-form-label" for="inputPlayer">플레이어</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" id="inputPlayer" placeholder="플레이어 이름"
+                       value="{{ player|default_if_none:'' }}">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-pink" id="btn_search">검색</button>
+            </div>
+        </div>
+        <form id="searchForm" method="get" action="{% url 'duel' %}">
+            <input type="hidden" id="god" name="god" value="{{ god|default_if_none:'' }}">
+            <input type="hidden" id="player" name="player" value="{{ player|default_if_none:'' }}">
+            <input type="hidden" id="page" name="page" value="{{ page }}">
+        </form>
+
         <div class="row" style="overflow: auto;">
             <div class="col-md-12 mb-4">
                 <table class="table table-striped-pink">
@@ -41,8 +67,10 @@
                             <td style="position:relative">
                                 {{ dual.winner_name }}
                                 <div class="godRowImage">
-                                <img class="god1" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/>
-                                <img class="god2" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/>
+                                    <img class="god1" src="
+                                            {% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_1_code }}.png"/>
+                                    <img class="god2" src="
+                                            {% cdn_static 'img/god/banner/banner_' %}{{ dual.winner_god_2_code }}.png"/>
                                 </div>
                             </td>
                             <td>{{ dual.winner_god_1 }} </td>
@@ -56,8 +84,10 @@
                             <td style="position:relative">
                                 {{ dual.loser_name }}
                                 <div class="godRowImage">
-                                <img class="god3" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/>
-                                <img class="god4" src="{% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/>
+                                    <img class="god3" src="
+                                            {% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_1_code }}.png"/>
+                                    <img class="god4" src="
+                                            {% cdn_static 'img/god/banner/banner_' %}{{ dual.loser_god_2_code }}.png"/>
                                 </div>
                             </td>
                             <td>{{ dual.loser_god_1 }} </td>
@@ -92,43 +122,66 @@
         </div>
         <div>
             <!-- 페이징처리 시작 -->
-            <ul class="pagination" style="display: block; text-align:center; white-space: nowrap; overflow: auto">
+            <ul class="pagination justify-content-center">
                 <!-- 이전페이지 -->
                 {% if paginator.has_previous %}
-                    <li class="page-item" style="display: inline-block; ">
-                        <a class="page-link" href="?page={{ paginator.previous_page_number }}">이전</a>
+                    <li class="page-item">
+                        <a class="page-link" data-page="{{ paginator.previous_page_number }}"
+           href="javascript:void(0)">이전</a>
                     </li>
                 {% else %}
-                    <li class="page-item disabled" style="display: inline-block;">
+                    <li class="page-item disabled">
                         <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
                     </li>
                 {% endif %}
                 <!-- 페이지리스트 -->
                 {% for page_number in paginator.paginator.page_range %}
                     {% if page_number >= paginator.number|add:-5 and page_number <= paginator.number|add:5 %}
-                    {% if page_number == paginator.number %}
-                        <li class="page-item active" aria-current="page" style="display: inline-block;">
-                            <a class="page-link" href="?page={{ page_number }}" style="background-color: #f68699 !important; border-color: pink">{{ page_number }}</a>
-                        </li>
-                    {% else %}
-                        <li class="page-item" style="display: inline-block;">
-                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
-                        </li>
-                    {% endif %}
+                        {% if page_number == paginator.number %}
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" data-page="{{ page_number }}"
+           href="javascript:void(0)">{{ page_number }}</a>
+                            </li>
+                        {% else %}
+                            <li class="page-item">
+                                <a class="page-link" data-page="{{ page_number }}"
+           href="javascript:void(0)">{{ page_number }}</a>
+                            </li>
+                        {% endif %}
                     {% endif %}
                 {% endfor %}
                 <!-- 다음페이지 -->
                 {% if paginator.has_next %}
-                    <li class="page-item" style="display: inline-block;">
-                        <a class="page-link" href="?page={{ paginator.next_page_number }}">다음</a>
+                    <li class="page-item">
+                        <a class="page-link" data-page="{{ paginator.next_page_number }}"
+           href="javascript:void(0)">다음</a>
                     </li>
                 {% else %}
-                    <li class="page-item disabled" style="display: inline-block;">
+                    <li class="page-item disabled">
                         <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
                     </li>
                 {% endif %}
             </ul>
             <!-- 페이징처리 끝 -->
         </div>
+        <script type='text/javascript'>
+
+            const page_elements = document.getElementsByClassName("page-link");
+
+            Array.from(page_elements).forEach(function (element) {
+                element.addEventListener('click', function () {
+                    document.getElementById('page').value = this.dataset.page;
+                    document.getElementById('searchForm').submit();
+                });
+            });
+            const btn_search = document.getElementById("btn_search");
+            btn_search.addEventListener('click', function () {
+                document.getElementById('god').value = document.getElementById('inputGod').value;
+                document.getElementById('player').value = document.getElementById('inputPlayer').value;
+                document.getElementById('page').value = 1;  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
+                document.getElementById('searchForm').submit();
+            });
+        </script>
     </div>
+
 {% endblock %}

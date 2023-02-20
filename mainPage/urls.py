@@ -19,7 +19,7 @@ urlpatterns = [
     path('trio/<slug:god_code_1>', views.trio_god_select_2),
     path('trio/<slug:god_code_1>/<slug:god_code_2>/<slug:sort_by>', views.trio),
 
-    path('duel', views.dual),
+    path('duel', views.dual, name="duel"),
     path('duel/<int:dual_id>', views.decklist),
 
     path('archive', views.archive),
