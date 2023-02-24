@@ -141,7 +141,7 @@ def dual(request):
     god = request.GET.get('god', '')
     player = request.GET.get('player', '')
     page = request.GET.get('page', '1')
-    dual_list = Dual.objects.all()
+    dual_list = Dual.objects.all().order_by('-id')
     if god:
         try:
             god_code = God.objects.get(god_name=god).god_code
