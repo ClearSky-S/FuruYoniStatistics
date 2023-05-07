@@ -138,14 +138,27 @@ def dual(request):
 
     # return HttpResponse("새 시즌이 시작되어 서버 점검중입니다.")
     print(request.GET)
-    god = request.GET.get('god', '')
+    god1 = request.GET.get('god1', '')
+    god2 = request.GET.get('god2', '')
     player = request.GET.get('player', '')
     page = request.GET.get('page', '1')
     dual_list = Dual.objects.all().order_by('-id')
-    if god:
+    if god1 != '' and god2 != '':
         try:
-            god_code = God.objects.get(god_name=god).god_code
-            dual_list = dual_list.filter(Q(winner_god_1=god_code)|Q(winner_god_2=god_code)|Q(loser_god_1=god_code) | Q(loser_god_2=god_code))
+            god_code1 = God.objects.get(god_code=god1).god_code
+            god_code2 = God.objects.get(god_code=god2).god_code
+            dual_list = dual_list.filter((Q(winner_god_1=god_code1)&Q(winner_god_2=god_code2))|(Q(winner_god_1=god_code2)&Q(winner_god_2=god_code1))
+                                       |(Q(loser_god_1=god_code1)&Q(loser_god_2=god_code2))|(Q(loser_god_1=god_code2)&Q(loser_god_2=god_code1)))
+        except:
+            dual_list = dual_list.filter(winner_god_1="none")
+    elif god1 != '' or god2 != '':
+        try:
+            god_code = ''
+            if(god1 != ''):
+                god_code = God.objects.get(god_code=god1).god_code
+            else:
+                god_code = God.objects.get(god_code=god2).god_code
+            dual_list = dual_list.filter(Q(winner_god_1=god_code)|Q(winner_god_2=god_code)|Q(loser_god_1=god_code)|Q(loser_god_2=god_code))
         except:
             dual_list = dual_list.filter(winner_god_1="none")
     if player:
@@ -199,7 +212,9 @@ def dual(request):
     context = {
         'dual_list': dual_data,
         'paginator': paginator,
-        'god':god,
+        'god1':god1,
+        'god2':god2,
+        'god_list': God.objects.all(),
         'player':player,
     }
     return render(request, 'dual.html', context)

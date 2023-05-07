@@ -17,8 +17,20 @@
                 <label class="col-form-label" for="inputGod">여신</label>
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control" id="inputGod" placeholder="여신 이름"
-                       value="{{ god|default_if_none:'' }}">
+                <!-- <input type="text" class="form-control" id="inputGod" placeholder="여신 이름"
+                       value="{{ god|default_if_none:'' }}"> -->
+                <select id="inputGod1" name="inputGod1" onchange="godChanged(this)">
+                    <option value selected disabled>첫번째여신선택</option>
+                    {% for god in god_list %}
+                    <option value="{{god.god_code}}">{{god.god_name}}</option>
+                    {% endfor %}
+                </select>
+                <select id="inputGod2" name="inputGod2" onchange="godChanged(this)">
+                    <option value selected disabled>두번째여신선택</option>
+                    {% for god in god_list %}
+                    <option value="{{god.god_code}}">{{god.god_name}}</option>
+                    {% endfor %}
+                </select>
             </div>
             <div class="col-auto">
                 <label class="col-form-label" for="inputPlayer">플레이어</label>
@@ -32,7 +44,8 @@
             </div>
         </div>
         <form id="searchForm" method="get" action="{% url 'duel' %}">
-            <input type="hidden" id="god" name="god" value="{{ god|default_if_none:'' }}">
+            <input type="hidden" id="god1" name="god1" value="{{ god1|default_if_none:'' }}">
+            <input type="hidden" id="god2" name="god2" value="{{ god2|default_if_none:'' }}">
             <input type="hidden" id="player" name="player" value="{{ player|default_if_none:'' }}">
             <input type="hidden" id="page" name="page" value="{{ page }}">
         </form>
@@ -167,6 +180,18 @@
         <script type='text/javascript'>
 
             const page_elements = document.getElementsByClassName("page-link");
+            let god1 = "{{god1}}";
+            let god2 = "{{god2}}";
+
+            document.getElementById("inputGod1").value = god1;
+            document.getElementById("inputGod2").value = god2;
+
+            const godChanged = (target) =>{
+                if(target.name === "inputGod1")
+                    god1 = target.value;
+                else if(target.name === "inputGod2")
+                    god2 = target.value;
+            }
 
             Array.from(page_elements).forEach(function (element) {
                 element.addEventListener('click', function () {
@@ -176,7 +201,10 @@
             });
             const btn_search = document.getElementById("btn_search");
             btn_search.addEventListener('click', function () {
-                document.getElementById('god').value = document.getElementById('inputGod').value;
+                document.getElementById('god1').value = god1;
+                document.getElementById('god2').value = god2;
+                // document.getElementById('god1').value = document.getElementById('inputGod1').value;
+                // document.getElementById('god2').value = document.getElementById('inputGod2').value;
                 document.getElementById('player').value = document.getElementById('inputPlayer').value;
                 document.getElementById('page').value = 1;  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
                 document.getElementById('searchForm').submit();
