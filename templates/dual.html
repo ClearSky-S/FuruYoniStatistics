@@ -19,16 +19,16 @@
             <div class="col-auto">
                 <!-- <input type="text" class="form-control" id="inputGod" placeholder="여신 이름"
                        value="{{ god|default_if_none:'' }}"> -->
-                <select id="inputGod1" name="inputGod1" onchange="godChanged(this)">
-                    <option value selected disabled>첫번째여신선택</option>
+                <select id="inputGod1" name="inputGod1" onchange="godChanged(this)" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split">
+                    <option class="dropdown-item" value selected>여신1</option>
                     {% for god in god_list %}
-                    <option value="{{god.god_code}}">{{god.god_name}}</option>
+                    <option class="dropdown-item" value="{{god.god_code}}">{{god.god_name}}</option>
                     {% endfor %}
                 </select>
-                <select id="inputGod2" name="inputGod2" onchange="godChanged(this)">
-                    <option value selected disabled>두번째여신선택</option>
+                <select id="inputGod2" name="inputGod2" onchange="godChanged(this)" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split">
+                    <option class="dropdown-item" value selected>여신2</option>
                     {% for god in god_list %}
-                    <option value="{{god.god_code}}">{{god.god_name}}</option>
+                    <option class="dropdown-item" value="{{god.god_code}}">{{god.god_name}}</option>
                     {% endfor %}
                 </select>
             </div>
