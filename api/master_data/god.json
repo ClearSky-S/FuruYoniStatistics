@@ -44,9 +44,6 @@
       "win_ratio": "00.0"
     }
   },
-
-
-
   {
     "model": "api.God",
     "fields": {
@@ -92,8 +89,6 @@
       "win_ratio": "00.0"
     }
   },
-
-
   {
     "model": "api.God",
     "fields": {
@@ -124,7 +119,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -170,7 +164,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -201,7 +194,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -232,7 +224,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -263,7 +254,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -294,7 +284,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -325,7 +314,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -371,7 +359,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -402,7 +389,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -463,7 +449,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -494,7 +479,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -510,7 +494,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -556,7 +539,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -587,7 +569,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -603,7 +584,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -619,7 +599,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -635,7 +614,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -651,7 +629,6 @@
       "win_ratio": "00.0"
     }
   },
-
   {
     "model": "api.God",
     "fields": {
@@ -667,7 +644,22 @@
       "win_ratio": "00.0"
     }
   },
-    {
+  {
+    "model": "api.God",
+    "fields": {
+      "god_code": "22-A1",
+      "god_name": "렌리-역사가",
+      "god_keyword": "위증",
+      "god_text": "통상패를 기본적인 방법으로 사용할 때, 위증을 가진 각 카드로 한 번씩 위증할 수 있다.",
+      "pick_count": "0",
+      "pick_ratio": "00.0",
+      "ban_count": "0",
+      "ban_ratio": "00.0",
+      "win_count": "0",
+      "win_ratio": "00.0"
+    }
+  },
+  {
     "model": "api.God",
     "fields": {
       "god_code": "23-O",
@@ -682,7 +674,7 @@
       "win_ratio": "00.0"
     }
   },
-    {
+  {
     "model": "api.God",
     "fields": {
       "god_code": "24-O",
