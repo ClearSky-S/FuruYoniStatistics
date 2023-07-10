@@ -5,4 +5,5 @@ Static/db와 archive.html에 데이터 추가
 
 PythonAnywhere
 git pull
+db 삭제
 ./scripts/setup.sh
