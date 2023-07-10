@@ -2,6 +2,7 @@
 Static/img/god에 타롯과 배너 추가
 api/master_data에 여신데이터와 카드 데이터 추가
 Static/db와 archive.html에 데이터 추가
+base.html, home.html 및 마크다운에 패치노트 추가
 
 PythonAnywhere
 git pull
